@@ -1,0 +1,1307 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Formulář VV</title>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="js/jquery-3.2.0.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/jstorage.min.js"></script>
+    <script type="text/javascript" src="js/Scope.js"></script>
+    <script type="text/javascript" src="elements.js"></script>
+    <script type="text/javascript" src="data.js"></script>
+    <script type="text/javascript" src="rules.js"></script>
+    <script type="text/javascript" src="init.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="styly.css">
+</head>
+<body onload="init()">
+    <div>
+        <img alt="logo" src="ELKOS LOGO_4.jpg" onclick="$('body > div').toggleClass('container');">
+        <table id="table_p">
+            <tr class="entry-row"> <!-- Členění -->
+                <td colspan="5" class="r-align">
+                    <b>Členění:</b>
+                </td>
+                <td colspan="7">
+                    <input type="text" class="fillparent bluebold" value="#" name="cislo_protokolu">
+                </td>
+            </tr>
+            <tr class="entry-row entry2-row entry3-row"> <!-- Mistnost / označení ; Umístění ; Výrobní linie  -->
+                <td colspan="2"><b>Místnost / označení prostor:</b></td>
+                <td colspan="4"><input class="fillparent" type="text" name="mistnost"></td>
+                <td colspan="2"><b>Umístění:</b></td>
+                <td colspan="1"><input class="fillparent" type="text" name="umisteni"></td>
+                <td colspan="2"><b>Výrobní linie:</b></td>
+                <td colspan="1"><input class="fillparent" type="text" name="linie"></td>
+            </tr>
+            <tr> <!-- Využití / účel ; Mistnost / umístění, Prostor -->
+                <td colspan="6" style="border-bottom: 1px dotted black;">
+                    <b>Využití / účel:</b>
+                </td>
+                <td colspan="2"><b>Prostor:</b></td>
+                <td colspan="4">
+                    <select name="prostor" class="fillparent">
+                        <option value="none"></option>
+                        <option value="1">Prostor   I. (vnitřní prostor-plně klimatizovaná místa)</option>
+                        <option value="2">Prostor  II. (vnitřní prostor s trvalou regulací teploty)</option>
+                        <option value="3">Prostor III. (vnitřní prostor s možností regulace teploty)</option>
+                        <option value="4">Prostor  IV. (vnitřní prostor bez regulace teploty)</option>
+                        <option value="5">Prostor   V. (pod přístřeškem)</option>
+                        <option value="6">Prostor  VI. (prostor přímo vystavený působení venkovního klimatu)</option>
+                    </select>
+                </td>
+            </tr>
+            <tr> <!-- Textarea (autosize) -->
+                <td colspan="12" style="border-top: none; padding-top: 3px;">
+                    <textarea id="vyuziti_area" class="autosize fillparent"></textarea>
+                </td>
+            </tr>
+            <tr class="entry-row entry2-row"> <!-- Obsluha ; Část budovy -->
+                <td colspan="2"><b>Obsluha:</b></td>
+                <td colspan="4">
+                    <select name="obsluha" class="fillparent">
+                        <option value="none"></option>
+                        <option value="bez_obsluhy">bez obsluhy</option>
+                        <option value="bez_obsluhy_automat">bez obsluhy, automatický režim</option>
+                        <option value="s_prerus_obsluhou">s přerušovanou obsluhou</option>
+                        <option value="s_obsluhou_trvale">s trvalou obsluhou</option>
+                    </select>
+                </td>
+                <td colspan="2"><b>Část budovy:</b></td>
+                <td colspan="4">
+                    <select name="cast" class="fillparent">
+                        <option value=""></option>
+                        <option value="2">A - administrativní část</option>
+                        <option value="3">B - administrativní část</option>
+                        <option value="4">C - administrativní část</option>
+                        <option value="5">D - administrativní část</option>
+                        <option value="6">E - laboratoř</option>
+                        <option value="7">F - expedice</option>
+                        <option value="8">G - údržba</option>
+                        <option value="9">H - výrobní zázemí</option>
+                        <option value="10">I - vrátnice</option>
+                        <option value="11">S - sklady</option>
+                        <option value="12">V - výrobní část</option>
+                        <option value="13">MB - mobilní buňky</option>
+                    </select>
+                </td>
+            </tr>
+            <tr class="entry-row entry2-row"> <!-- Osvětlení ; Požární ochrana -->
+                <td colspan="2"><b>Osvětlení:</b></td>
+                <td colspan="4">
+                    <select name="osvetleni" class="fillparent">
+                        <option value="none"></option>
+                        <option value="zarivkove">zářivkové</option>
+                        <option value="zarovkove">žárovkové</option>
+                        <option value="LED">LED</option>
+                        <option value="vybojkove">výbojkové</option>
+                        <option value="zarivkove+zarovkove">zářivkové + žárovkové</option>
+                        <option value="zarivkove+nouzove">zářivkové + nouzové</option>
+                        <option value="zarivkove+nouzove+orientacni">zářivkové + nouzové + orientační</option>
+                    </select>
+                </td>
+                <td colspan="2"><b>Požární ochrana:</b></td>
+                <td colspan="4">
+                    <select name="pozarni_ochrana" class="fillparent">
+                        <option value="none"></option>
+                        <option value="hasici_pristroj">hasicí přístroj</option>
+                        <option value="hydrant">hydrant</option>
+                        <option value="hasici_pristroj+hydrant">hasicí přístroj + hydrant</option>
+                        <option value="sprinklery">sprinklery</option>
+                        <option value="sprinklery+hasici_pristroj+hydrant">sprinklery + hasicí přístroj + hydrant</option>
+                    </select>
+                </td>
+            </tr>
+            <tr class="entry-row entry2-row"> <!-- Podlaha; Stěny -->
+                <td colspan="2"><b>Podlaha:</b></td>
+                <td colspan="4">
+                    <select name="podlaha" class="fillparent">
+                        <option value="none"></option>
+                        <option value="beton+lino">beton + lino</option>
+                        <option value="beton+sterka">beton + pryskyřičná stěrka</option>
+                        <option value="beton+koberec">beton + koberec</option>
+                        <option value="beton+dlazba">beton + dlažba</option>
+                        <option value="osbd">OSBD desky</option>
+                        <option value="ocel">ocelové pláty</option>
+                        <option value="kombinovana">kombinovaná beton + ocelové pláty</option>
+                    </select>
+                </td>
+                <td colspan="2"><b>Stěny:</b></td>
+                <td colspan="4">
+                    <select name="steny" class="fillparent">
+                        <option value="none"></option>
+                        <option value="zed+stuk">zděné + štuk</option>
+                        <option value="sendvic">sendvičové panely</option>
+                        <option value="zed+keramika">zděné + keramický obklad</option>
+                        <option value="sdk">SDK - sádrokarton</option>
+                        <option value="sdk">SDK - sádrokarton + keramický obklad</option>
+                        <option value="beton">betonové</option>
+                        <option value="drevo">dřevěné</option>
+                        <option value="textil">textilní</option>
+                    </select>
+                </td>
+            </tr>
+            <tr class="entry-row entry2-row"> <!-- Vytápění / chlazení; Větrání -->
+                <td colspan="2"><b>Vytápění / chlazení:</b></td>
+                <td colspan="4">
+                    <select name="vytapeni" class="fillparent">
+                        <option value="none"></option>
+                        <option value="teplovodni">teplovodní</option>
+                        <option value="elektricke">elektrické přímotopné panely</option>
+                        <option value="teplovodni+klima">teplovodní + klimatizace</option>
+                        <option value="teplovodni+vzduch">teplovodní + vzduchotechnika</option>
+                        <option value="teplovodni_SAHARA">teplovodní SAHARA</option>
+                        <option value="elektricke_SAHARA">elektrická SAHARA</option>
+                        <option value="klima">klimatizace</option>
+                        <option value="klima+vzduch">klimatizace + vzduchotechnika</option>
+                        <option value="vzduch">vzduchotechnika</option>
+                    </select>
+                </td>
+                <td colspan="2"><b>Větrání:</b></td>
+                <td colspan="4">
+                    <select name="vetrani" class="fillparent">
+                        <option value="none"></option>
+                        <option value="okna">okna</option>
+                        <option value="vzt">vzduchotechnika</option>
+                        <option value="strecha">střešní světlíky</option>
+                        <option value="okna+strecha">okna + střešní světlíky</option>
+                        <option value="okna+vzt">okna + vzduchotechnika</option>
+                        <option value="prirozene">přirozené</option>
+                    </select>
+                </td>
+            </tr>
+            <tr class="entry-row"> <!-- Plošná výměra -->
+                <td colspan="2"><b>Plošná výměra:</b> (v&nbsp;m<sup>2</sup>)</td>
+                <td class="r-align" colspan="2">
+                    <input class="fillparent" name="vymera" type="number" />
+                </td>
+                <td class="r-align" colspan="8"></td>
+            </tr>
+            <tr class="entry-row radio-row" bez_rizika="[1,2,3,4,5,8]"> <!-- AA Teplota okolí -->
+                <td colspan="2"><b>Teplota okolí:</b></td>
+                <td class="c-align" colspan="2"><span class="bluebold">AA</span></td>
+                <td class="c-align" colspan="1">
+                <!--
+                bezrizika = "1,2,3,4,5,8" ; lhuta = "5" ; prostor = "NORMÁLNÍ"
+                srizikem = "6,7" ; lhuta = "3" ; prostor = "NEBEZPEČNÝ"
+                -->
+                    <p>
+                        <input type="radio" name="AA">&nbsp;<b>1</b><br>
+                        -60°C - +5°C
+                    </p>
+                </td>
+                <td class="c-align" colspan="1">
+                    <p>
+                        <input type="radio" name="AA">&nbsp;<b>2</b><br>
+                        -40°C - +5°C
+                    </p>
+                </td>
+                <td class="c-align" colspan="1">
+                    <p>
+                        <input type="radio" name="AA">&nbsp;<b>3</b><br>
+                        -5°C - +5°C
+                    </p>
+                </td>
+                <td class="c-align" colspan="1">
+                    <p>
+                        <input type="radio" name="AA">&nbsp;<b>4</b><br>
+                        -5°C - +40°C
+                    </p>
+                </td>
+                <td class="c-align" colspan="1">
+                    <p>
+                        <input type="radio" name="AA">&nbsp;<b>5</b><br>
+                        +5°C - +40°C
+                    </p>
+                </td>
+                <td class="c-align" colspan="1">
+                    <p>
+                        <input type="radio" name="AA" lhuta="3" prostor="'NEBEZPEČNÉ'">&nbsp;<b>6</b><br>
+                        +5°C - +60°C
+                    </p>
+                </td>
+                <td class="c-align" colspan="1">
+                    <p>
+                        <input type="radio" name="AA" lhuta="3" prostor="'NEBEZPEČNÉ'">&nbsp;<b>7</b><br>
+                        +25°C - +55°C
+                    </p>
+                </td>
+                <td class="c-align" colspan="1">
+                    <p>
+                        <input type="radio" name="AA">&nbsp;<b>8</b><br>
+                        -50°C - +40°C
+                    </p>
+                </td>
+            </tr>
+            <tr class="entry-row radio-row" bez_rizika="A1_prostor < 5 ? [5] : []"> <!-- AB Vlhkost a teplota -->
+                <td colspan="2"><b>Vlhkost a teplota:</b></td>
+                <td class="c-align" colspan="2"><span class="bluebold">AB</span></td>
+                <td class="c-align" colspan="1">
+                <!--
+                ifprostor = "1,2,3,4" 
+                bezrizika = "5" ; lhuta = "5" ; prostor = "NORMÁLNÍ"
+                srizikem = "1,2,3,4" ; lhuta = "5" ; prostor = "NEBEZPEČNÉ"
+                srizikem = "6,7" ; lhuta = "4" ; prostor = "ZVLÁŠŤ NEBEZPEČNÉ"
+                ifprostor = "5,6"
+                srizikem = "1,2,3,8" ; lhuta = "4" ; prostor = "NEBEZPEČNÉ"
+                srizikem = "6" ; lhuta = "4" ; prostor = "ZVLÁŠŤ NEBEZPEČNÉ"
+                -->
+                    <p>
+                        <input type="radio" name="AB" lhuta="A1_prostor < 5 ? 5 : 4" prostor="A1_prostor < 5 ? 'NORMÁLNÍ' : 'NEBEZPEČNÉ'">
+                        &nbsp;<b>1</b><br>
+                        -60°C - +5°C<br>
+                        3% - 100%
+                    </p>
+                </td>
+                <td class="c-align" colspan="1">
+                    <p>
+                        <input type="radio" name="AB" lhuta="A1_prostor < 5 ? 5 : 4" prostor="A1_prostor < 5 ? 'NORMÁLNÍ' : 'NEBEZPEČNÉ'">
+                        &nbsp;<b>2</b><br>
+                        -40°C - +5°C<br>
+                        10% - 100%
+                    </p>
+                </td>
+                <td class="c-align" colspan="1">
+                    <p>
+                        <input type="radio" name="AB" lhuta="A1_prostor < 5 ? 5 : 4" prostor="A1_prostor < 5 ? 'NORMÁLNÍ' : 'NEBEZPEČNÉ'">
+                        &nbsp;<b>3</b><br>
+                        -5°C - +5°C<br>
+                        10% - 100%
+                    </p>
+                </td>
+                <td class="c-align" colspan="1">
+                    <p>
+                        <input type="radio" name="AB" lhuta="A1_prostor < 5 ? 5 : 4" prostor="A1_prostor < 5 ? 'NORMÁLNÍ' : 'NEBEZPEČNÉ'">
+                        &nbsp;<b>4</b><br>
+                        -5°C - +40°C<br>
+                        5% - 95%
+                    </p>
+                </td>
+                <td class="c-align" colspan="1">
+                    <p>
+                        <input type="radio" name="AB">
+                        &nbsp;<b>5</b><br>
+                        +5°C - +40°C<br>
+                        5% - 85%
+                    </p>
+                </td>
+                <td class="c-align" colspan="1">
+                    <p>
+                        <input type="radio" name="AB" lhuta="A1_prostor < 5 ? 5 : 4" prostor="ZVLÁŠŤ NEBEZPEČNÉ">
+                        &nbsp;<b>6</b><br>
+                        +5°C - +60°C<br>
+                        10% - 100%
+                    </p>
+                </td>
+                <td class="c-align" colspan="1">
+                    <p>
+                        <input type="radio" name="AB" lhuta="A1_prostor < 5 ? 5 : 4" prostor="ZVLÁŠŤ NEBEZPEČNÉ">
+                        &nbsp;<b>7</b><br>
+                        +25°C - +55°C<br>
+                        10% - 100%
+                    </p>
+                </td>
+                <td class="c-align" colspan="1">
+                    <p>
+                        <input type="radio" name="AB" lhuta="A1_prostor < 5 ? alert('chyba') : 4" prostor="NEBEZPEČNÉ">
+                        &nbsp;<b>8</b><br>
+                        -50°C - +40°C<br>
+                        10% - 100%
+                    </p>
+                </td>
+            </tr>
+            <tr class="entry-row radio-row" bez_rizika="[1,2]"> <!-- AC Nadmořská výška -->
+                <td colspan="2"><b>Nadmořská výška:</b></td>
+                <td class="c-align" colspan="2"><span class="bluebold">AC</span></td>
+                <td class="c-align" colspan="4">
+                <!-- 
+                bezrizika = "1,2" ; lhuta = "5" ; prostor = "NORMÁLNÍ"
+                -->
+                    <p>
+                        <input type="radio" name="AC">&nbsp;<b>1</b><br>
+                        &le; 2000m
+                    </p>
+                </td>
+                <td class="c-align" colspan="4">
+                    <p>
+                        <input type="radio" name="AC">&nbsp;<b>2</b><br>
+                        &ge; 2000m
+                    </p>
+                </td>
+            </tr>
+            <tr class="entry-row radio-row" bez_rizika="[1]"> <!-- AD Voda -->
+                <td colspan="2"><b>Voda:</b></td>
+                <td class="c-align" colspan="2"><span class="bluebold">AD</span></td>
+                <td class="c-align" colspan="1">
+                <!--
+                bezrizika = "1"> ; lhuta = "5" ; prostor = "NORMÁLNÍ">
+                srizikem = "2,3,4,5,6,7,8"> ; lhuta = "1" ; prostor = "ZVLÁŠŤ NEBEZPEČNÉ"
+                -->
+                    <p>
+                        <input type="radio" name="AD">&nbsp;<b>1</b><br>
+                        zanedbatelná
+                    </p>
+                </td>
+                <td class="c-align" colspan="1">
+                    <p>
+                        <input type="radio" name="AD" lhuta='1' prostor='ZVLÁŠŤ NEBEZPEČNÉ'>
+                        &nbsp;<b>2</b><br>
+                        volně padající kapky
+                    </p>
+                </td>
+                <td class="c-align" colspan="1">
+                    <p>
+                        <input type="radio" name="AD" lhuta='1' prostor='ZVLÁŠŤ NEBEZPEČNÉ'>
+                        &nbsp;<b>3</b><br>
+                        vodní tříšť
+                    </p>
+                </td>
+                <td class="c-align" colspan="1">
+                    <p>
+                        <input type="radio" name="AD" lhuta='1' prostor='ZVLÁŠŤ NEBEZPEČNÉ'>
+                        &nbsp;<b>4</b><br>
+                        stříkající voda
+                    </p>
+                </td>
+                <td class="c-align" colspan="1">
+                    <p>
+                        <input type="radio" name="AD" lhuta='1' prostor='ZVLÁŠŤ NEBEZPEČNÉ'>
+                        &nbsp;<b>5</b><br>
+                        tryskající voda
+                    </p>
+                </td>
+                <td class="c-align" colspan="1">
+                    <p>
+                        <input type="radio" name="AD" lhuta='1' prostor='ZVLÁŠŤ NEBEZPEČNÉ'>
+                        &nbsp;<b>6</b><br>
+                        vlny
+                    </p>
+                </td>
+                <td class="c-align" colspan="1">
+                    <p>
+                        <input type="radio" name="AD" lhuta='1' prostor='ZVLÁŠŤ NEBEZPEČNÉ'>
+                        &nbsp;<b>7</b><br>
+                        mělké ponoření
+                    </p>
+                </td>
+                <td class="c-align" colspan="1">
+                    <p>
+                        <input type="radio" name="AD" lhuta='1' prostor='ZVLÁŠŤ NEBEZPEČNÉ'>
+                        &nbsp;<b>8</b><br>
+                        hluboké ponoření
+                    </p>
+                </td>
+            </tr>
+            <tr class="entry-row radio-row" bez_rizika="[1]"> <!-- AE Cizí tělesa -->
+                <td colspan="2"><b>Cizí tělesa:</b></td>
+                <td class="c-align" colspan="2"><span class="bluebold">AE</span></td>
+                <td class="c-align" colspan="1">
+                <!--
+                bezrizika = "1"> ; lhuta = "5"> ; prostor = "NORMÁLNÍ">
+                srizikem = "2,3,4,5,6" ; lhuta = "3" ; prostor = "NEBEZPEČNÉ"
+                -->
+                    <p>
+                        <input type="radio" name="AE">&nbsp;<b>1</b><br>
+                        zanedbatelná
+                    </p>
+                </td>
+                <td class="c-align" colspan="1">
+                    <p>
+                        <input type="radio" name="AE" lhuta='3' prostor='NEBEZPEČNÉ'>
+                        &nbsp;<b>2</b><br>
+                        malé předměty
+                    </p>
+                </td>
+                <td class="c-align" colspan="2">
+                    <p>
+                        <input type="radio" name="AE" lhuta='3' prostor='NEBEZPEČNÉ'>
+                        &nbsp;<b>3</b><br>
+                        velmi malé předměty
+                    </p>
+                </td>
+                <td class="c-align" colspan="2">
+                    <p>
+                        <input type="radio" name="AE" lhuta='3' prostor='NEBEZPEČNÉ'>
+                        &nbsp;<b>4</b><br>
+                        lehká prašnost
+                    </p>
+                </td>
+                <td class="c-align" colspan="1">
+                    <p>
+                        <input type="radio" name="AE" lhuta='3' prostor='NEBEZPEČNÉ'>
+                        &nbsp;<b>5</b><br>
+                        mírná prašnost
+                    </p>
+                </td>
+                <td class="c-align" colspan="1">
+                    <p>
+                        <input type="radio" name="AE" lhuta='3' prostor='NEBEZPEČNÉ'>
+                        &nbsp;<b>6</b><br>
+                        silná prašnost
+                    </p>
+                </td>
+            </tr>
+            <tr class="entry-row radio-row" bez_rizika="[1]"> <!-- AF Korozivní působení -->
+                <td colspan="2"><b>Korozivní působení:</b></td>
+                <td class="c-align" colspan="2"><span class="bluebold">AF</span></td>
+                <td class="c-align" colspan="2">
+                <!--
+                bezrizika = "1" ; lhuta = "5" ; prostor = "NORMÁLNÍ" 
+                srizikem = "2,3" ; lhuta = "3"> ; prostor = "NEBEZPEČNÉ">
+                srizikem = "4" ; lhuta = "1" ; prostor = "ZVLÁŠŤ NEBEZPEČNÉ"
+                -->
+                    <p>
+                        <input type="radio" name="AF">&nbsp;<b>1</b><br>
+                        zanedbatelné
+                    </p>
+                </td>
+                <td class="c-align" colspan="2">
+                    <p>
+                        <input type="radio" name="AF" lhuta='3' prostor='NEBEZPEČNÉ'>
+                        &nbsp;<b>2</b><br>
+                        atmosférické
+                    </p>
+                </td>
+                <td class="c-align" colspan="2">
+                    <p>
+                        <input type="radio" name="AF" lhuta='3' prostor='NEBEZPEČNÉ'>
+                        &nbsp;<b>3</b><br>
+                        občasné
+                    </p>
+                </td>
+                <td class="c-align" colspan="2">
+                    <p>
+                        <input type="radio" name="AF" lhuta='1' prostor='ZVLÁŠŤ NEBEZPEČNÉ'>
+                        &nbsp;<b>4</b><br>
+                        trvalé
+                    </p>
+                </td>
+            </tr>
+            <tr class="entry-row radio-row" bez_rizika="[1]"> <!-- AG Ráz -->
+                <td colspan="2"><b>Ráz:</b></td>
+                <td class="c-align" colspan="2"><span class="bluebold">AG</span></td>
+                <td class="c-align" colspan="3">
+                <!--
+                bezrizika = "1" ; lhuta = "5" ; prostor = "NORMÁLNÍ"
+                srizikem = "2" ; lhuta = "3" ; prostor = "NEBEZPEČNÉ"
+                srizikem = "3" ; lhuta = "2" ; prostor = "ZVLÁŠŤ NEBEZPEČNÉ"
+                -->
+                    <p>
+                        <input type="radio" name="AG">&nbsp;<b>1</b><br>
+                        mírný
+                    </p>
+                </td>
+                <td class="c-align" colspan="2">
+                    <p>
+                        <input type="radio" name="AG" lhuta='3' prostor='NEBEZPEČNÉ'>
+                        &nbsp;<b>2</b><br>
+                        střední
+                    </p>
+                </td>
+                <td class="c-align" colspan="3">
+                    <p>
+                        <input type="radio" name="AG" lhuta='2' prostor='ZVLÁŠŤ NEBEZPEČNÉ'>
+                        &nbsp;<b>3</b><br>
+                        silný
+                    </p>
+                </td>
+            </tr>
+            <tr class="entry-row radio-row" bez_rizika="[1]"> <!-- AH Vibrace -->
+                <td colspan="2"><b>Vibrace:</b></td>
+                <td class="c-align" colspan="2"><span class="bluebold">AH</span></td>
+                <td class="c-align" colspan="3">
+                <!-- 
+                bezrizika = "1" ; lhuta = "5" ; prostor = "NORMÁLNÍ"
+                srizikem = "2" ; lhuta = "3" ; prostor = "NEBEZPEČNÉ"
+                srizikem = "3" ; lhuta = "2" ; prostor = "ZVLÁŠŤ NEBEZPEČNÉ"
+                -->
+                    <p>
+                        <input type="radio" name="AH">&nbsp;<b>1</b><br>
+                        mírné
+                    </p>
+                </td>
+                <td class="c-align" colspan="2">
+                    <p>
+                        <input type="radio" name="AH" lhuta='3' prostor='NEBEZPEČNÉ'>
+                        &nbsp;<b>2</b><br>
+                        střední
+                    </p>
+                </td>
+                <td class="c-align" colspan="3">
+                    <p>
+                        <input type="radio" name="AH" lhuta='2' prostor='ZVLÁŠŤ NEBEZPEČNÉ'>
+                        &nbsp;<b>3</b><br>
+                        silné
+                    </p>
+                </td>
+            </tr>
+            <tr class="entry-row radio-row" bez_rizika="[1]"> <!-- AJ Ostatní mechanické namáhání -->
+                <td colspan="2"><b>Ostatní mechanické namáhání:</b></td>
+                <td class="c-align" colspan="2">
+                    <input type="checkbox" name="AJ" value="1">
+                    &nbsp;
+                    <span class="bluebold">AJ</span>
+                </td>
+                <td class="c-align" colspan="8">
+                </td>
+            </tr>
+            <tr class="entry-row radio-row" bez_rizika="[1]"> <!-- AK Rostlinstvo -->
+                <td colspan="2"><b>Rostlinstvo:</b></td>
+                <td class="c-align" colspan="2"><span class="bluebold">AK</span></td>
+                <td class="c-align" colspan="4">
+                <!-- 
+                bezrizika = "1" ; lhuta = "5" ; prostor = "NORMÁLNÍ"
+                srizikem = "2" ; lhuta = "3" ; prostor = "NEBEZPEČNÉ"
+                -->
+                    <p>
+                        <input type="radio" name="AK">&nbsp;<b>1</b><br>
+                        bez nebezpečí
+                    </p>
+                </td>
+                <td class="c-align" colspan="4">
+                    <p>
+                        <input type="radio" name="AK" lhuta='3' prostor='NEBEZPEČNÉ'>
+                        &nbsp;<b>2</b><br>
+                        nebezpečné
+                    </p>
+                </td>
+            </tr>
+            <tr class="entry-row radio-row" bez_rizika="[1]"> <!-- AL Živočichové -->
+                <td colspan="2"><b>Živočichové:</b></td>
+                <td class="c-align" colspan="2"><span class="bluebold">AL</span></td>
+                <td class="c-align" colspan="4">
+                <!--
+                bezrizika = "1" ; lhuta = "5" ; prostor = "NORMÁLNÍ"
+                srizikem = "2" ; lhuta = "3" ; prostor = "NEBEZPEČNÉ"
+                -->
+                    <p>
+                        <input type="radio" name="AL">&nbsp;<b>1</b><br>
+                        bez nebezpečí
+                    </p>
+                </td>
+                <td class="c-align" colspan="4">
+                    <p>
+                        <input type="radio" name="AL" lhuta='3' prostor='NEBEZPEČNÉ'>
+                        &nbsp;<b>2</b><br>
+                        nebezpečné
+                    </p>
+                </td>
+            </tr>
+            <tr> <!-- Elektromagnetická, elektrostatická nebo ionizující působení. -->
+                <td class="c-align" colspan="12">
+                    <span id="elektro_zabalen" class="glyphicon glyphicon-triangle-right display-none"></span>
+                    <span id="elektro_rozbalen" class="glyphicon glyphicon-triangle-bottom"></span>
+                    <b>Elektromagnetická, elektrostatická nebo ionizující působení.</b>
+                </td>
+            </tr>
+            <tr class="entry-row radio-row" bez_rizika="[1]"> <!-- AM-1 Harmonické, meziharmonické -->
+                <td colspan="2"><b>Harmonické, mezi harmonické:</b></td>
+                <td class="c-align" colspan="2"><span class="bluebold">AM-1-</span></td>
+                <td class="c-align" colspan="3">
+                    <p>
+                        <input type="radio" name="AM-1-">&nbsp;<b>1</b><br>
+                        kontrolovaná úroveň
+                    </p>
+                </td>
+                <td class="c-align" colspan="2">
+                    <p>
+                        <input type="radio" name="AM-1-">&nbsp;<b>2</b><br>
+                        normální úroveň
+                    </p>
+                </td>
+                <td class="c-align" colspan="3">
+                    <p>
+                        <input type="radio" name="AM-1-">&nbsp;<b>3</b><br>
+                        vysoká úroveň
+                    </p>
+                </td>
+            </tr>
+            <tr class="entry-row radio-row" bez_rizika="[1]"> <!-- AM-2 Signální napětí -->
+                <td colspan="2"><b>Signální napětí:</b></td>
+                <td class="c-align" colspan="2"><span class="bluebold">AM-2-</span></td>
+                <td class="c-align" colspan="3">
+                    <p>
+                        <input type="radio" name="AM-2-">&nbsp;<b>1</b><br>
+                        kontrolovaná úroveň
+                    </p>
+                </td>
+                <td class="c-align" colspan="2">
+                    <p>
+                        <input type="radio" name="AM-2-">&nbsp;<b>2</b><br>
+                        normální úroveň
+                    </p>
+                </td>
+                <td class="c-align" colspan="3">
+                    <p>
+                        <input type="radio" name="AM-2-">&nbsp;<b>3</b><br>
+                        vysoká úroveň
+                    </p>
+                </td>
+            </tr>
+            <tr class="entry-row radio-row" bez_rizika="[1]"> <!-- AM-3 Změny amplitudy napětí -->
+                <td colspan="2"><b>Změny amplitudy napětí:</b></td>
+                <td class="c-align" colspan="2"><span class="bluebold">AM-3-</span></td>
+                <td class="c-align" colspan="4">
+                    <p>
+                        <input type="radio" name="AM-3-">&nbsp;<b>1</b><br>
+                        kontrolovaná úroveň
+                    </p>
+                </td>
+                <td class="c-align" colspan="4">
+                    <p>
+                        <input type="radio" name="AM-3-">&nbsp;<b>2</b><br>
+                        vysoká úroveň
+                    </p>
+                </td>
+            </tr>
+            <tr class="entry-row radio-row" bez_rizika="[1]"> <!-- AM-4 Neustálé napětí; AM-5 Změny kmitočtu; AM-6 Indukované napětí nízkého kmitočtu; AM-7 Stejnosměrný proud v obvodech střídavého proudu  -->
+                <td colspan="2"><b>Neustálé napětí:</b></td>
+                <td class="c-align" colspan="1">
+                    <input type="checkbox" name="AM-4" value="1">
+                    &nbsp;
+                    <span class="bluebold">AM-4</span>
+                </td>
+                <td colspan="2"><b>Změny kmitočtu:</b></td>
+                <td class="c-align" colspan="1">
+                    <input type="checkbox" name="AM-5" value="1">
+                    &nbsp;
+                    <span class="bluebold">AM-5</span>
+                </td>
+                <td colspan="2"><b>Indukované napětí nízkého kmitočtu:</b></td>
+                <td class="c-align" colspan="1">
+                    <input type="checkbox" name="AM-6" value="1">
+                    &nbsp;
+                    <span class="bluebold">AM-6</span>
+                </td>
+                <td colspan="2"><b>Ostatní mechanické namáhání:</b></td>
+                <td class="c-align" colspan="1">
+                    <input type="checkbox" name="AM-7" value="1">
+                    &nbsp;
+                    <span class="bluebold">AM-7</span>
+                </td>
+            </tr>
+            <tr class="entry-row radio-row" bez_rizika="[1]"> <!-- AM-8 Vyzařovaná magnetická pole -->
+                <td colspan="2"><b>Vyzařovaná magnetická pole:</b></td>
+                <td class="c-align" colspan="2"><span class="bluebold">AM-8-</span></td>
+                <td class="c-align" colspan="4">
+                    <p>
+                        <input type="radio" name="AM-8-">&nbsp;<b>1</b><br>
+                        střední úroveň
+                    </p>
+                </td>
+                <td class="c-align" colspan="4">
+                    <p>
+                        <input type="radio" name="AM-8-">&nbsp;<b>2</b><br>
+                        vysoká úroveň
+                    </p>
+                </td>
+            </tr>
+            <tr class="entry-row radio-row" bez_rizika="[1]"> <!-- AM-9 Elektrická pole -->
+                <td colspan="2"><b>Elektrická pole:</b></td>
+                <td class="c-align" colspan="2"><span class="bluebold">AM-9-</span></td>
+                <td class="c-align" colspan="2">
+                    <p>
+                        <input type="radio" name="AM-9-">&nbsp;<b>1</b><br>
+                        zanedbatelná úroveň
+                    </p>
+                </td>
+                <td class="c-align" colspan="2">
+                    <p>
+                        <input type="radio" name="AM-9-">&nbsp;<b>2</b><br>
+                        střední úroveň
+                    </p>
+                </td>
+                <td class="c-align" colspan="2">
+                    <p>
+                        <input type="radio" name="AM-9-">&nbsp;<b>3</b><br>
+                        vysoká úroveň
+                    </p>
+                </td>
+                <td class="c-align" colspan="2">
+                    <p>
+                        <input type="radio" name="AM-9-">&nbsp;<b>4</b><br>
+                        velmi vysoká úroveň
+                    </p>
+                </td>
+            </tr>
+            <tr class="entry-row radio-row" bez_rizika="[1]"> <!-- AM-21 Indukované oscilující napětí nebo proudy -->
+                <td colspan="2"><b>Indukované oscilující napětí nebo proudy:</b></td>
+                <td class="c-align" colspan="2">
+                    <input type="checkbox" name="AM-21" value="1">
+                    &nbsp;
+                    <span class="bluebold">AM-21</span>
+                </td>
+                <td class="c-align" colspan="8">
+                </td>
+            </tr>
+            <tr class="entry-row radio-row" bez_rizika="[1]"> <!-- AM-22 Šířené vedením, jednosměrně vedené v časovém měřítku nanosekund -->
+                <td colspan="2"><b>Šířené vedením, jednosměrně vedené v časovém měřítku nanosekund:</b></td>
+                <td class="c-align" colspan="2"><span class="bluebold">AM-22-</span></td>
+                <td class="c-align" colspan="2">
+                    <p>
+                        <input type="radio" name="AM-22-">&nbsp;<b>1</b><br>
+                        zanedbatelná úroveň
+                    </p>
+                </td>
+                <td class="c-align" colspan="2">
+                    <p>
+                        <input type="radio" name="AM-22-">&nbsp;<b>2</b><br>
+                        střední úroveň
+                    </p>
+                </td>
+                <td class="c-align" colspan="2">
+                    <p>
+                        <input type="radio" name="AM-22-">&nbsp;<b>3</b><br>
+                        vysoká úroveň
+                    </p>
+                </td>
+                <td class="c-align" colspan="2">
+                    <p>
+                        <input type="radio" name="AM-22-">&nbsp;<b>4</b><br>
+                        velmi vysoká úroveň
+                    </p>
+                </td>
+            </tr>
+            <tr class="entry-row radio-row" bez_rizika="[1]"> <!-- AM-23 Šířené vedením, jednosměrně vedené v časovém měřítku milisekund nebo mikrosekund -->
+                <td colspan="2"><b>Šířené vedením, jednosměrně vedené v časovém měřítku milisekund nebo mikrosekund:</b></td>
+                <td class="c-align" colspan="2"><span class="bluebold">AM-23-</span></td>
+                <td class="c-align" colspan="3">
+                    <p>
+                        <input type="radio" name="AM-23-">&nbsp;<b>1</b><br>
+                        kontrolovaná úroveň
+                    </p>
+                </td>
+                <td class="c-align" colspan="2">
+                    <p>
+                        <input type="radio" name="AM-23-">&nbsp;<b>2</b><br>
+                        střední úroveň
+                    </p>
+                </td>
+                <td class="c-align" colspan="3">
+                    <p>
+                        <input type="radio" name="AM-23-">&nbsp;<b>3</b><br>
+                        vysoká úroveň
+                    </p>
+                </td>
+            </tr>
+            <tr class="entry-row radio-row" bez_rizika="[1]"> <!-- AM-24 Oscilační přechodové jevy -->
+                <td colspan="2"><b>Oscilační přechodové jevy:</b></td>
+                <td class="c-align" colspan="2"><span class="bluebold">AM-24-</span></td>
+                <td class="c-align" colspan="4">
+                    <p>
+                        <input type="radio" name="AM-24-">&nbsp;<b>1</b><br>
+                        střední úroveň
+                    </p>
+                </td>
+                <td class="c-align" colspan="4">
+                    <p>
+                        <input type="radio" name="AM-24-">&nbsp;<b>2</b><br>
+                        vysoká úroveň
+                    </p>
+                </td>
+            </tr>
+            <tr class="entry-row radio-row" bez_rizika="[1]"> <!-- AM-25 Jevy vyzařované s vysokým kmitočtem -->
+                <td colspan="2"><b>Jevy vyzařované s vysokým kmitočtem:</b></td>
+                <td class="c-align" colspan="2"><span class="bluebold">AM-25-</span></td>
+                <td class="c-align" colspan="3">
+                    <p>
+                        <input type="radio" name="AM-25-">&nbsp;<b>1</b><br>
+                        kontrolovaná úroveň
+                    </p>
+                </td>
+                <td class="c-align" colspan="2">
+                    <p>
+                        <input type="radio" name="AM-25-">&nbsp;<b>2</b><br>
+                        střední úroveň
+                    </p>
+                </td>
+                <td class="c-align" colspan="3">
+                    <p>
+                        <input type="radio" name="AM-25-">&nbsp;<b>3</b><br>
+                        vysoká úroveň
+                    </p>
+                </td>
+            </tr>
+            <tr class="entry-row radio-row" bez_rizika="[1]"> <!-- AM-31 Elektrostatické výboje -->
+                <td colspan="2"><b>Elektrostatické výboje:</b></td>
+                <td class="c-align" colspan="2"><span class="bluebold">AM-31-</span></td>
+                <td class="c-align" colspan="2">
+                <!-- srizikem = "1,2,3,4"> ; lhuta = "3" ; prostor = "NEBEZPEČNÉ" -->
+                    <p>
+                        <input type="radio" name="AM-31-">&nbsp;<b>1</b><br>
+                        nízká úroveň
+                    </p>
+                </td>
+                <td class="c-align" colspan="2">
+                    <p>
+                        <input type="radio" name="AM-31-">&nbsp;<b>2</b><br>
+                        střední úroveň
+                    </p>
+                </td>
+                <td class="c-align" colspan="2">
+                    <p>
+                        <input type="radio" name="AM-31-">&nbsp;<b>3</b><br>
+                        vysoká úroveň
+                    </p>
+                </td>
+                <td class="c-align" colspan="2">
+                    <p>
+                        <input type="radio" name="AM-31-">&nbsp;<b>4</b><br>
+                        velmi vysoká úroveň
+                    </p>
+                </td>
+            </tr>
+            <tr class="entry-row radio-row" bez_rizika="[1]"> <!-- AM-41 Ionizace -->
+                <td colspan="2"><b>Ionizace:</b></td>
+                <td class="c-align" colspan="2">
+                    <input type="checkbox" name="AM-41" value="1">
+                    &nbsp;
+                    <span class="bluebold">AM-41-1</span>
+                </td>
+                <td class="c-align" colspan="8">
+                </td>
+            </tr>
+            <tr class="entry-row radio-row" bez_rizika="[]"> <!-- AN Sluneční záření -->
+                <td colspan="2"><b>Sluneční záření:</b></td>
+                <td class="c-align" colspan="2"><span class="bluebold">AN</span></td>
+                <td class="c-align" colspan="3">
+                <!--
+                ifprostor = "5,6"
+                srizikem = "1,2,3" ; lhuta = "4" ; prostor = "NEBEZPEČNÉ"
+                -->
+                    <p>
+                        <input type="radio" name="AN" lhuta="A1_prostor < 5 ? alert(AN_UVNITR) : 4" prostor='NEBEZPEČNÉ'>
+                        &nbsp;<b>1</b><br>
+                        zanedbatelné
+                    </p>
+                </td>
+                <td class="c-align" colspan="2">
+                    <p>
+                        <input type="radio" name="AN" lhuta="A1_prostor < 5 ? alert(AN_UVNITR) : 4" prostor="NEBEZPEČNÉ">
+                        &nbsp;<b>2</b><br>
+                        střední
+                    </p>
+                </td>
+                <td class="c-align" colspan="3">
+                    <p>
+                        <input type="radio" name="AN" lhuta="A1_prostor < 5 ? alert(AN_UVNITR) : 4" prostor="NEBEZPEČNÉ">
+                        &nbsp;<b>3</b><br>
+                        silné
+                    </p>
+                </td>
+            </tr>
+            <tr class="entry-row radio-row" bez_rizika="[1]"> <!-- AP Seizmické působení normální -->
+                <td colspan="2"><b>Seizmické působení normální:</b></td>
+                <td class="c-align" colspan="2"><span class="bluebold">AP</span></td>
+                <td class="c-align" colspan="2">
+                <!--
+                bezrizika = "1" ; lhuta = "5" ; prostor = "NORMÁLNÍ"
+                srizikem = "2,3,4" ; lhuta = "3" ; prostor = 'NEBEZPEČNÉ'
+                -->
+                    <p>
+                        <input type="radio" name="AP">&nbsp;<b>1</b><br>
+                        nnormální
+                    </p>
+                </td>
+                <td class="c-align" colspan="2">
+                    <p>
+                        <input type="radio" name="AP" lhuta = "3" ; prostor = 'NEBEZPEČNÉ'>
+                        &nbsp;<b>2</b><br>
+                        nízké
+                    </p>
+                </td>
+                <td class="c-align" colspan="2">
+                    <p>
+                        <input type="radio" name="AP" lhuta = "3" ; prostor = 'NEBEZPEČNÉ'>
+                        &nbsp;<b>3</b><br>
+                        střední
+                    </p>
+                </td>
+                <td class="c-align" colspan="2">
+                    <p>
+                        <input type="radio" name="AP" lhuta = "3" ; prostor = 'NEBEZPEČNÉ'>
+                        &nbsp;<b>4</b><br>
+                        silné
+                    </p>
+                </td>
+            </tr>
+            <tr class="entry-row radio-row" bez_rizika="[1]"> <!-- AQ Bouřková činnost -->
+                <td colspan="2"><b>Bouřková činnost:</b></td>
+                <td class="c-align" colspan="2"><span class="bluebold">AQ</span></td>
+                <td class="c-align" colspan="3">
+                <!--
+                bezrizika = "1" ; lhuta = "5" ; prostor = "NORMÁLNÍ"
+                srizikem = "2,3" ; lhuta = "5" ; prostor = 'NEBEZPEČNÉ'
+                -->
+                    <p>
+                        <input type="radio" name="AQ">&nbsp;<b>1</b><br>
+                        zanedbatelné
+                    </p>
+                </td>
+                <td class="c-align" colspan="2">
+                    <p>
+                        <input type="radio" name="AQ" lhuta = "5" ; prostor = 'NEBEZPEČNÉ'>
+                        &nbsp;<b>2</b><br>
+                        střední
+                    </p>
+                </td>
+                <td class="c-align" colspan="3">
+                    <p>
+                        <input type="radio" name="AQ" lhuta = "5" ; prostor = 'NEBEZPEČNÉ'>
+                        &nbsp;<b>3</b><br>
+                        silné
+                    </p>
+                </td>
+            </tr>
+            <tr class="entry-row radio-row" bez_rizika="[1,2,3]"> <!-- AR  Pohyb vzduchu -->
+                <td colspan="2"><b> Pohyb vzduchu:</b></td>
+                <td class="c-align" colspan="2"><span class="bluebold">AR</span></td>
+                <td class="c-align" colspan="3">
+                <!--
+                bezrizika = "1,2,3" ; lhuta = "5" ; prostor = "NORMÁLNÍ"
+                -->
+                    <p>
+                        <input type="radio" name="AR">&nbsp;<b>1</b><br>
+                        pomalý
+                    </p>
+                </td>
+                <td class="c-align" colspan="2">
+                    <p>
+                        <input type="radio" name="AR">&nbsp;<b>2</b><br>
+                        střední
+                    </p>
+                </td>
+                <td class="c-align" colspan="3">
+                    <p>
+                        <input type="radio" name="AR">&nbsp;<b>3</b><br>
+                        silný
+                    </p>
+                </td>
+            </tr>
+            <tr class="entry-row radio-row" bez_rizika="A1_prostor < 5 ? [5] : []"> <!-- AS  Vítr -->
+                <td colspan="2"><b> Vítr:</b></td>
+                <td class="c-align" colspan="2"><span class="bluebold">AS</span></td>
+                <td class="c-align" colspan="3">
+                <!--
+                ifprostor = "5,6"
+                bezrizika = "1" ; lhuta = "4" ; prostor = "NORMÁLNÍ"
+                srizikem = "2,3" ; lhuta = "4" ; prostor = "NEBEZPEČNÉ"
+                -->
+                    <p>
+                        <input type="radio" name="AS" "A1_prostor < 5 ? alert('chyba') : 4">
+                        &nbsp;<b>1</b><br>
+                        malý
+                    </p>
+                </td>
+                <td class="c-align" colspan="2">
+                    <p>
+                        <input type="radio" name="AS" lhuta="A1_prostor < 5 ? alert('chyba') : 4"; prostor ='NEBEZPEČNÉ'>
+                        &nbsp;<b>2</b><br>
+                        střední
+                    </p>
+                </td>
+                <td class="c-align" colspan="3">
+                    <p>
+                        <input type="radio" name="AS" lhuta="A1_prostor < 5 ? alert('chyba') : 4"; prostor = 'NEBEZPEČNÉ'>
+                        &nbsp;<b>3</b><br>
+                        velký
+                    </p>
+                </td>
+            </tr>
+            <tr class="entry-row radio-row" bez_rizika="[1,4,5]"> <!-- BA Schopnosti osob -->
+                <td colspan="2"><b>Schopnosti osob:</b></td>
+                <td class="c-align" colspan="2"><span class="bluebold">BA</span></td>
+                <td class="c-align" colspan="1">
+                <!--
+                bezrizika = "1,4,5" ; lhuta = "5" ; prostor = "NORMÁLNÍ"
+                srizikem = "2" ; lhuta = "3" ; prostor = 'NEBEZPEČNÉ'
+                srizikem = "3" ; lhuta = "3" ; prostor = 'ZVLÁŠŤ NEBEZPEČNÉ'
+                -->
+                    <p>
+                        <input type="radio" name="BA">&nbsp;<b>1</b><br>
+                        běžná
+                    </p>
+                </td>
+                <td class="c-align" colspan="1">
+                    <p>
+                        <input type="radio" name="BA" lhuta = "3" ; prostor = 'NEBEZPEČNÉ'>
+                        &nbsp;<b>2</b><br>
+                        děti
+                    </p>
+                </td>
+                <td class="c-align" colspan="2">
+                    <p>
+                        <input type="radio" name="BA" lhuta = "3" ; prostor = 'ZVLÁŠŤ NEBEZPEČNÉ'>
+                        &nbsp;<b>3</b><br>
+                        osoby se zdravotním postižením
+                    </p>
+                </td>
+                <td class="c-align" colspan="2">
+                    <p>
+                        <input type="radio" name="BA">&nbsp;<b>4</b><br>
+                        osoby poučené
+                    </p>
+                </td>
+                <td class="c-align" colspan="2">
+                    <p>
+                        <input type="radio" name="BA">&nbsp;<b>5</b><br>
+                        osoby znalé
+                    </p>
+                </td>
+            </tr>
+            <tr class="entry-row radio-row" bez_rizika="[1]"> <!-- BB Elektrický odpor lidského těla -->
+                <td colspan="2"><b>Elektrický odpor lidského těla:</b></td>
+                <td class="c-align" colspan="2">
+                    <input type="checkbox" name="BB" value="1">
+                    &nbsp;
+                    <span class="bluebold">BB</span>
+                </td>
+                <td class="c-align" colspan="8">
+                </td>
+            </tr>
+            <tr class="entry-row radio-row" bez_rizika="[1,2]"> <!-- BC Dotyk se zemí -->
+                <td colspan="2"><b>Dotyk se zemí:</b></td>
+                <td class="c-align" colspan="2"><span class="bluebold">BC</span></td>
+                <td class="c-align" colspan="2">
+                <!--
+                bezrizika = "1,2" ; lhuta = "5" ; prostor = "NORMÁLNÍ"
+                srizikem = "3,4" ; lhuta = "3" ; prostor = 'NEBEZPEČNÉ'
+                -->
+                    <p>
+                        <input type="radio" name="BC">&nbsp;<b>1</b><br>
+                        žádný
+                    </p>
+                </td>
+                <td class="c-align" colspan="2">
+                    <p>
+                        <input type="radio" name="BC">&nbsp;<b>2</b><br>
+                        vyjímečný
+                    </p>
+                </td>
+                <td class="c-align" colspan="2">
+                    <p>
+                        <input type="radio" name="BC" lhuta = "3" ; prostor = 'NEBEZPEČNÉ'>
+                        &nbsp;<b>3</b><br>
+                        častý
+                    </p>
+                </td>
+                <td class="c-align" colspan="2">
+                    <p>
+                        <input type="radio" name="BC" lhuta = "3" ; prostor = 'NEBEZPEČNÉ'>
+                        &nbsp;<b>4</b><br>
+                        trvalý
+                    </p>
+                </td>
+            </tr>
+            <tr class="entry-row radio-row" bez_rizika="[1,2]"> <!-- BD Únik v případě nebezpečí -->
+                <td colspan="2"><b>Únik v případě nebezpečí:</b></td>
+                <td class="c-align" colspan="2"><span class="bluebold">BD</span></td>
+                <td class="c-align" colspan="2">
+                <!--
+                bezrizika = "1,2" ; lhuta = "5" ; prostor = "NORMÁLNÍ"
+                srizikem = "3,4" ; lhuta = "3" ; prostor = 'NEBEZPEČNÉ'
+                -->
+                    <p>
+                        <input type="radio" name="BD">&nbsp;<b>1</b><br>
+                        málo lidí/snadný únik
+                    </p>
+                </td>
+                <td class="c-align" colspan="2">
+                    <p>
+                        <input type="radio" name="BD">&nbsp;<b>2</b><br>
+                        málo lidí/obtížný únik
+                    </p>
+                </td>
+                <td class="c-align" colspan="2">
+                    <p>
+                        <input type="radio" name="BD" lhuta = "3" ; prostor = 'NEBEZPEČNÉ'>
+                        &nbsp;<b>3</b><br>
+                        vysoký počet lidí/snadný únik
+                    </p>
+                </td>
+                <td class="c-align" colspan="2">
+                    <p>
+                        <input type="radio" name="BD" lhuta = "3" ; prostor = 'NEBEZPEČNÉ'>
+                        &nbsp;<b>4</b><br>
+                        vysoký počet lidí/obtížný únik
+                    </p>
+                </td>
+            </tr>
+            <tr class="entry-row radio-row" bez_rizika="[1,2]"> <!-- BE Látky v objektu -->
+                <td colspan="2"><b>Látky v objektu:</b></td>
+                <td class="c-align" colspan="2"><span class="bluebold">BE</span></td>
+                <td class="c-align" colspan="1">
+                <!--
+                bezrizika = "1,2" ; lhuta = "5" ; prostor = "NORMÁLNÍ"
+                srizikem = "3,4" ; lhuta = "3" ; prostor = 'NEBEZPEČNÉ'
+                -->
+                    <p>
+                        <input type="radio" name="BE">&nbsp;<b>1</b><br>
+                        bez nebezpečí
+                    </p>
+                </td>
+                <td class="c-align" colspan="1">
+                    <p>
+                        <input type="radio" name="BE" lhuta = "2" ; prostor = 'NORMÁLNÍ'>
+                        &nbsp;<b>2N1</b><br>
+                        požár hmot
+                    </p>
+                </td>
+                <td class="c-align" colspan="1">
+                    <p>
+                        <input type="radio" name="BE" lhuta = "2" ; prostor = 'NEBEZPEČNÉ'>
+                        &nbsp;<b>2N2</b><br>
+                        požár prachů
+                    </p>
+                </td>
+                <td class="c-align" colspan="1">
+                    <p>
+                        <input type="radio" name="BE" lhuta = "2" ; prostor = 'ZVLÁŠŤ NEBEZPEČNÉ'>
+                        &nbsp;<b>2N3</b><br>
+                        požár kapalin
+                    </p>
+                </td>
+                <td class="c-align" colspan="1">
+                    <p>
+                        <input type="radio" name="BE" lhuta = "3" ; prostor = 'NEBEZPEČNÉ'>
+                        &nbsp;<b>3N1</b><br>
+                        výbuch prachů
+                    </p>
+                </td>
+                <td class="c-align" colspan="1">
+                    <p>
+                        <input type="radio" name="BE" lhuta = "3" ; prostor = 'ZVLÁŠŤ NEBEZPEČNÉ'>
+                        &nbsp;<b>3N2</b><br>
+                        výbuch plynů a par
+                    </p>
+                </td>
+                <td class="c-align" colspan="1">
+                    <p>
+                        <input type="radio" name="BE" lhuta = "1" ; prostor = 'ZVLÁŠŤ NEBEZPEČNÉ'>
+                        &nbsp;<b>3N3</b><br>
+                        výbuch výbušnin
+                    </p>
+                </td>
+                <td class="c-align" colspan="1">
+                    <p>
+                        <input type="radio" name="BE" lhuta = "3" ; prostor = 'NEBEZPEČNÉ'>
+                        &nbsp;<b>4</b><br>
+                        nebezpečí kontaminace
+                    </p>
+                </td>
+            </tr>
+            <tr class="entry-row radio-row" bez_rizika="[1,2]"> <!-- CA Konstrukční materiály budovy -->
+                <td colspan="2"><b>Konstrukční materiály budovy:</b></td>
+                <td class="c-align" colspan="2"><span class="bluebold">CA</span></td>
+                <td class="c-align" colspan="4">
+                <!--
+                bezrizika = "1" ; lhuta = "5" ; prostor = "NORMÁLNÍ"
+                bezrizika = "2" ; lhuta = "2" ; prostor = "NORMÁLNÍ"
+                -->
+                    <p>
+                        <input type="radio" name="CA">&nbsp;<b>1</b><br>
+                        nehořlavé
+                    </p>
+                </td>
+                <td class="c-align" colspan="4">
+                    <p>
+                        <input type="radio" lhuta="2" name="CA" lhuta="2">
+                        &nbsp;<b>2</b><br>
+                        hořlavé
+                    </p>
+                </td>
+            </tr>
+            <tr class="entry-row radio-row" bez_rizika="[1,2]" s_ > <!-- CB Provedení budovy -->
+                <td colspan="2"><b>Provedení budovy:</b></td>
+                <td class="c-align" colspan="2"><span class="bluebold">CB</span></td>
+                <td class="c-align" colspan="2">
+                 <!--
+                bezrizika = "1,2" ; lhuta = "5" ; prostor = "NORMÁLNÍ"
+                srizikem = "3,4" ; lhuta = "5" ; prostor = 'NEBEZPEČNÉ'
+                -->
+                    <p>
+                        <input type="radio" name="CB">&nbsp;<b>1</b><br>
+                        zanedbatelné nebezpečí
+                    </p>
+                </td>
+                <td class="c-align" colspan="2">
+                    <p>
+                        <input type="radio" name="CB">&nbsp;<b>2</b><br>
+                        nebezpečí šíření ohně
+                    </p>
+                </td>
+                <td class="c-align" colspan="2">
+                    <p>
+                        <input type="radio" name="CB" prostor = 'NEBEZPEČNÉ'>
+                        &nbsp;<b>3</b><br>
+                        nebezpečí posunu
+                    </p>
+                </td>
+                <td class="c-align" colspan="2">
+                    <p>
+                        <input type="radio" name="CB" prostor = 'NEBEZPEČNÉ'>
+                        &nbsp;<b>4</b><br>
+                        poddajné nebo nestabilní
+                    </p>
+                </td>
+            </tr>
+            <tr class="entry-row entry2-row entry3-row"> <!-- Prostory -->
+                <td colspan="2">
+                    <b>Určení prostor:</b>
+                </td>
+                <td class="c-align" colspan="4">
+                    <span class="bluebold" id="prostory">NORMÁLNÍ</span>
+                </td>
+                <td colspan="2">
+                    <b>Revizní lhůta:</b>
+                </td>
+                <td class="c-align" colspan="4">
+                    <span class="bluebold" id="lhuta">5</span>
+                </td>
+            </tr>
+        </table>
+
+        <!-- <img src="http://pytel.brambor.net/PYTEL.BRAMBOR/PUBLIC/Kytka/vv%20protokol.png"> -->
+
+        <br><br><h2>Seznam formulářů</h2><br>
+
+
+        <br><br>
+        <div id="tab_seznam_container">
+            <table id="tab_seznam" class="table table-striped">
+                <thead>
+                    <tr>
+                        <th colspan="1">ID</th>
+                        <th colspan="1">Umístění</th>
+                        <th colspan="2">Místnost</th>
+                        <th colspan="8">Věta</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+
+        <button id="novy_form" class="btn btn-default">Nový záznam</button>
+        <button id="clone_form" class="btn btn-default">Klonovat záznam</button>
+        <button id="delete_form" class="btn">Odstranit aktivní záznam</button><br><br>
+        <button class="btn btn-danger" onclick="confirm(this.innerHTML + '?') ? [localStorage.clear(), document.location.reload()] : undefined">Odstranit všechny záznamy</button>
+
+        <br><br>
+        <b>Název souboru</b>
+        <input type="text" placeholder="formulare.txt" class="form-control" id="form_filename" /><br>
+        <!--input type="checkbox" id="erase_on_export" checked="false"> Odstranit záznamy při exportu. <br><br-->
+        <button id="export_forms" class="btn btn-default">Exportovat záznamy</button><br>
+
+        <br>
+        <h4>Import</h4>
+        <textarea id="import_data"></textarea><br>
+        <button class="btn btn-default" onclick="import_all_forms($('textarea#import_data')[0].value)">
+            Importovat
+        </button>
+
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+    </div>
+</body>
+</html>

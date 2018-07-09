@@ -1,0 +1,205 @@
+"3"; "2"; ""; "MAHLE01"; "Testovací laboratoř QS u linky Mercedes"; "A109"; "V laboratoři je instalována akustická komora. Provádí se zde laboratorní měření výrobků - vzorků."; "Prostor   I. (vnitřní prostor-plně klimatizovaná místa)"; "s přerušovanou obsluhou"; "zářivkové"; "beton + pryskyřičná stěrka"; "SDK - sádrokarton"; "hasicí přístroj"; "teplovodní + klimatizace"; "vzduchotechnika"; "25"; "AA5, AB5, AC1, AD1, AE1, AF1, AG1, AH1, AK1, AL1, AN1, AP1, AQ1, AR1, AS1, BA4, BC1, BD1, BE1, CA1, CB1"; ""; ""; ""; ""; ""; ""
+"3"; "2"; ""; "MAHLE02"; "Příruční sklad QS"; "A108"; "Sklad slouží k ukládání testovaných vzorků."; "Prostor  II. (vnitřní prostor s trvalou regulací teploty)"; ""; "zářivkové"; "beton + dlažba"; "SDK - sádrokarton"; "sprinklery"; "teplovodní"; ""; "3"; "AA5, AB5, AC1, AD1, AE1, AF1, AG1, AH1, AK1, AL1, BA1, BC1, BD1, BE1, CA1, CB1"; ""; ""; ""; ""; ""; ""
+"3"; "2"; ""; "MAHLE03"; "WC muži QS"; "A"; "Sociální zázemí pro laboratoř QS."; "Prostor  II. (vnitřní prostor s trvalou regulací teploty)"; "bez obsluhy"; "zářivkové"; "beton + dlažba"; "SDK - sádrokarton"; ""; ""; "vzduchotechnika"; "20"; "AA5, AB5, AC1, AD1, AE1, AF1, AG1, AH1, AK1, AL1, AN1, AP1, AQ1, AR1, AS1, BA1, BC1, BD1, BE1, CA1, CB1"; ""; ""; ""; ""; ""; ""
+"3"; "2"; ""; "MAHLE05"; "Sprchy + šatny ženy"; "A"; "Sociální zázemí."; "Prostor  II. (vnitřní prostor s trvalou regulací teploty)"; "bez obsluhy"; "zářivkové"; "beton + dlažba"; "SDK - sádrokarton"; ""; "teplovodní + vzduchotechnika"; "vzduchotechnika"; "20"; "AA5, AB5, AC1, AD1, AE1, AF1, AG1, AH1, AK1, AL1, AN1, AP1, AQ1, AR1, AS1, BA1, BC1, BD1, BE1, CA1, CB1"; ""; ""; ""; ""; ""; ""
+"3"; "12"; ""; "MAHLE06"; "Sklad granulátu 1. N.P."; "V102"; "Prostor slouží ke skladování a distribuci granulátu do zásobníků vstřikovacích lisů výrobní linie IM. Provádí se zde manipulace s granulátem pomocí vysokozdvižné techniky. Ve skladu jsou umístěné kovové regály pro uskladnění granulátu a vlastní stání s podtlakovým sáním."; "Prostor  IV. (vnitřní prostor bez regulace teploty)"; "s trvalou obsluhou"; "zářivkové"; "beton + pryskyřičná stěrka"; "sendvičové panely"; "sprinklery"; ""; "vzduchotechnika"; "216.80"; "AA5, AB5, AC1, AD1, AE1, AF1, AG1, AH1, AK1, AL1, AN1, AP1, AQ1, AR1, AS1, BA4, BC3, BD1, BE1, CA1, CB1"; ""; ""; ""; ""; ""; ""
+"3"; "12"; ""; "MAHLE07"; "Sklad granulátu podesta 2.N.P."; "V201"; "Prostor slouží ke sušení granulátu před distribucí do zásobníků vstřikovacích lisů výrobní linie IM. V prostoru jsou umístěné sušičky a vývěvy pro podtlakové sání."; "Prostor  IV. (vnitřní prostor bez regulace teploty)"; "s trvalou obsluhou"; "zářivkové"; "ocelové pláty"; "sendvičové panely"; "sprinklery"; ""; "vzduchotechnika"; "120.10"; "AA6, AB5, AC1, AD1, AE1, AF1, AG1, AH1, AK1, AL1, AN1, AP1, AQ1, AR1, AS1, BA4, BC3, BD1, BE1, CA1, CB1"; ""; ""; ""; ""; ""; ""
+"3"; "12"; ""; "MAHLE18041701"; "Vstřikovací lis 1300-03 Engel"; "Linie IM V101"; "Polyprepylénový granulát.
+Skládá se z více sekcí:
+1) násypka s extrudérem, kde dochází k roztavení granulátu, který je dopravován potrubní pneu-dopravou z místnosti skladu granulátu.
+2) lis s matricemi, kde dojde k vlastní mu vylisování výrobku
+3) robot pro odběr hotových výlisků
+4) kontrolní pracoviště trvalé obsluhy - operátor
+Stroj je vybaven nouzovými Stop tlačítky
+Stroj má samostatný rozvaděč NN.
+Pod strojem je zbudována zádržná bezpečnostní jímka.
+Typ: DUO 7050/700
+v.č.: 187489
+r.v.: 2013"; "Prostor  II. (vnitřní prostor s trvalou regulací teploty)"; "s trvalou obsluhou"; "zářivkové"; "beton + pryskyřičná stěrka"; "sendvičové panely"; "sprinklery"; "vzduchotechnika"; "vzduchotechnika"; "76"; "AA6, AB5, AC1, AD1, AE1, AF3, AG1, AH1, AK1, AL1, AN1, AP1, AQ1, AR1, AS1, BA5, BC3, BD1, BE1, CA1, CB1"; ""; ""; ""; ""; ""; ""
+"3"; "12"; ""; "MAHLE18041702"; "Vstřikovací lis 900-03 Engel"; "Linie IM V101"; "Polyprepylénový granulát.
+Skládá se z více sekcí:
+1) násypka s extrudérem, kde dochází k roztavení granulátu, který je dopravován potrubní pneu-dopravou z místnosti skladu granulátu.
+2) lis s matricemi, kde dojde k vlastní mu vylisování výrobku
+3) robot pro odběr hotových výlisků
+4) kontrolní pracoviště trvalé obsluhy - operátor
+Stroj je vybaven nouzovými Stop tlačítky
+Stroj má samostatný rozvaděč NN.
+Pod strojem je zbudována zádržná bezpečnostní jímka.
+Typ: DUO 4550/900 WP
+v.č.: 201810
+r.v.: 2015"; "Prostor  II. (vnitřní prostor s trvalou regulací teploty)"; "s trvalou obsluhou"; "zářivkové"; "beton + pryskyřičná stěrka"; "sendvičové panely"; "sprinklery"; "vzduchotechnika"; "vzduchotechnika"; "44"; "AA6, AB5, AC1, AD1, AE1, AF3, AG1, AH1, AK1, AL1, AN1, AP1, AQ1, AR1, AS1, BA5, BC3, BD1, BE1, CA1, CB1"; ""; ""; ""; ""; ""; ""
+"3"; "12"; ""; "MAHLE18041703"; "Vstřikovací lis 1100-01 Engel"; "Linie IM V101"; "Polyprepylénový granulát.
+Skládá se z více sekcí:
+1) násypka s extrudérem, kde dochází k roztavení granulátu, který je dopravován potrubní pneu-dopravou z místnosti skladu granulátu.
+2) lis s matricemi, kde dojde k vlastní mu vylisování výrobku
+3) robot pro odběr hotových výlisků
+4) kontrolní pracoviště trvalé obsluhy - operátor
+Stroj je vybaven nouzovými Stop tlačítky
+Stroj má samostatný rozvaděč NN.
+Pod strojem je zbudována zádržná bezpečnostní jímka.
+Typ: ES 4550/600 HL
+v.č.: 164543
+r.v.: 2007"; "Prostor  II. (vnitřní prostor s trvalou regulací teploty)"; "s trvalou obsluhou"; "zářivkové"; "beton + pryskyřičná stěrka"; "sendvičové panely"; "sprinklery"; "vzduchotechnika"; "vzduchotechnika"; "44"; "AA6, AB5, AC1, AD1, AE1, AF3, AG1, AH1, AK1, AL1, AN1, AP1, AQ1, AR1, AS1, BA5, BC3, BD1, BE1, CA1, CB1"; ""; ""; ""; ""; ""; ""
+"3"; "12"; ""; "MAHLE18041704"; "Vstřikovací lis 400-02 Engel"; "Linie IM V101"; "Polyprepylénový granulát.
+Skládá se z více sekcí:
+1) násypka s extrudérem, kde dochází k roztavení granulátu, který je dopravován potrubní pneu-dopravou z místnosti skladu granulátu.
+2) lis s matricemi, kde dojde k vlastní mu vylisování výrobku
+3) robot pro odběr hotových výlisků
+4) kontrolní pracoviště trvalé obsluhy - operátor
+Stroj je vybaven nouzovými Stop tlačítky
+Stroj má samostatný rozvaděč NN.
+Pod strojem je zbudována zádržná bezpečnostní jímka.
+Typ: VICTORY 2550/400 Power
+v.č.: 161168
+r.v.: 2006"; "Prostor  II. (vnitřní prostor s trvalou regulací teploty)"; "s trvalou obsluhou"; "zářivkové"; "beton + pryskyřičná stěrka"; "sendvičové panely"; "sprinklery"; "vzduchotechnika"; "vzduchotechnika"; "56"; "AA6, AB5, AC1, AD1, AE1, AF3, AG1, AH1, AK1, AL1, AN1, AP1, AQ1, AR1, AS1, BA5, BC3, BD1, BE1, CA1, CB1"; ""; ""; ""; ""; ""; ""
+"3"; "12"; ""; "MAHLE18041705"; "Vstřikovací lis 500-01 Engel"; "Linie IM V101"; "Polyprepylénový granulát.
+Skládá se z více sekcí:
+1) násypka s extrudérem, kde dochází k roztavení granulátu, který je dopravován potrubní pneu-dopravou z místnosti skladu granulátu.
+2) lis s matricemi, kde dojde k vlastní mu vylisování výrobku
+3) robot pro odběr hotových výlisků
+4) kontrolní pracoviště trvalé obsluhy - operátor
+Stroj je vybaven nouzovými Stop tlačítky
+Stroj má samostatný rozvaděč NN.
+Pod strojem je zbudována zádržná bezpečnostní jímka.
+Typ: VICTORY 2050/500 Tech
+v.č.: 187490
+r.v.: 2013"; "Prostor  II. (vnitřní prostor s trvalou regulací teploty)"; "s trvalou obsluhou"; "zářivkové"; "beton + pryskyřičná stěrka"; "sendvičové panely"; "sprinklery"; "vzduchotechnika"; "vzduchotechnika"; "56"; "AA6, AB5, AC1, AD1, AE1, AF3, AG1, AH1, AK1, AL1, AN1, AP1, AQ1, AR1, AS1, BA5, BC3, BD1, BE1, CA1, CB1"; ""; ""; ""; ""; ""; ""
+"3"; "12"; ""; "MAHLE18041706"; "Vstřikovací lis 700-01 Engel"; "Linie IM V101"; "Polyprepylénový granulát.
+Skládá se z více sekcí:
+1) násypka s extrudérem, kde dochází k roztavení granulátu, který je dopravován potrubní pneu-dopravou z místnosti skladu granulátu.
+2) lis s matricemi, kde dojde k vlastní mu vylisování výrobku
+3) robot pro odběr hotových výlisků
+4) kontrolní pracoviště trvalé obsluhy - operátor
+Stroj je vybaven nouzovými Stop tlačítky
+Stroj má samostatný rozvaděč NN.
+Pod strojem je zbudována zádržná bezpečnostní jímka.
+Typ: DUO 4550/700
+v.č.: 167322
+r.v.: 2008"; "Prostor  II. (vnitřní prostor s trvalou regulací teploty)"; "s trvalou obsluhou"; "zářivkové"; "beton + pryskyřičná stěrka"; "sendvičové panely"; "sprinklery"; "vzduchotechnika"; "vzduchotechnika"; "40"; "AA6, AB5, AC1, AD1, AE1, AF3, AG1, AH1, AK1, AL1, AN1, AP1, AQ1, AR1, AS1, BA5, BC3, BD1, BE1, CA1, CB1"; ""; ""; ""; ""; ""; ""
+"3"; "12"; ""; "MAHLE18041707"; "Vstřikovací lis 900-02 Engel"; "Linie IM V101"; "Polyprepylénový granulát.
+Skládá se z více sekcí:
+1) násypka s extrudérem, kde dochází k roztavení granulátu, který je dopravován potrubní pneu-dopravou z místnosti skladu granulátu.
+2) lis s matricemi, kde dojde k vlastní mu vylisování výrobku
+3) robot pro odběr hotových výlisků
+4) kontrolní pracoviště trvalé obsluhy - operátor
+Stroj je vybaven nouzovými Stop tlačítky
+Stroj má samostatný rozvaděč NN.
+Pod strojem je zbudována zádržná bezpečnostní jímka.
+Typ: DUO 7050/900
+v.č.: 52695
+r.v.: 2004"; "Prostor  II. (vnitřní prostor s trvalou regulací teploty)"; "s trvalou obsluhou"; "zářivkové"; "beton + pryskyřičná stěrka"; "sendvičové panely"; "sprinklery"; "vzduchotechnika"; "vzduchotechnika"; "44"; "AA6, AB5, AC1, AD1, AE1, AF3, AG1, AH1, AK1, AL1, AN1, AP1, AQ1, AR1, AS1, BA5, BC3, BD1, BE1, CA1, CB1"; ""; ""; ""; ""; ""; ""
+"3"; "12"; ""; "MAHLE18041708"; "Vstřikovací lis 1300-01 KRAUS MAFFEI"; "Linie IM V101"; "Polyprepylénový granulát.
+Skládá se z více sekcí:
+1) násypka s extrudérem, kde dochází k roztavení granulátu, který je dopravován potrubní pneu-dopravou z místnosti skladu granulátu.
+2) lis s matricemi, kde dojde k vlastní mu vylisování výrobku
+3) robot pro odběr hotových výlisků
+4) kontrolní pracoviště trvalé obsluhy - operátor
+Stroj je vybaven nouzovými Stop tlačítky
+Stroj má samostatný rozvaděč NN.
+Pod strojem je zbudována zádržná bezpečnostní jímka.
+Typ: KM 1300-8000 M 
+v.č.: 13A880B2
+r.v.: 1989"; "Prostor  II. (vnitřní prostor s trvalou regulací teploty)"; "s trvalou obsluhou"; "zářivkové"; "beton + pryskyřičná stěrka"; "sendvičové panely"; "sprinklery"; "vzduchotechnika"; "vzduchotechnika"; "76"; "AA6, AB5, AC1, AD1, AE1, AF3, AG1, AH1, AK1, AL1, AN1, AP1, AQ1, AR1, AS1, BA5, BC3, BD1, BE1, CA1, CB1"; ""; ""; ""; ""; ""; ""
+"3"; "12"; ""; "MAHLE18041709"; "Vstřikovací lis 400-01 Engel"; "Linie IM V101"; "Polyprepylénový granulát.
+Skládá se z více sekcí:
+1) násypka s extrudérem, kde dochází k roztavení granulátu, který je dopravován potrubní pneu-dopravou z místnosti skladu granulátu.
+2) lis s matricemi, kde dojde k vlastní mu vylisování výrobku
+3) robot pro odběr hotových výlisků
+4) kontrolní pracoviště trvalé obsluhy - operátor
+Stroj je vybaven nouzovými Stop tlačítky
+Stroj má samostatný rozvaděč NN.
+Pod strojem je zbudována zádržná bezpečnostní jímka.
+Typ: ES 2550/400 HL
+v.č.: 44988
+r.v.: 2001"; "Prostor  II. (vnitřní prostor s trvalou regulací teploty)"; "s trvalou obsluhou"; "zářivkové"; "beton + pryskyřičná stěrka"; "sendvičové panely"; "sprinklery"; "vzduchotechnika"; "vzduchotechnika"; "56"; "AA6, AB5, AC1, AD1, AE1, AF3, AG1, AH1, AK1, AL1, AN1, AP1, AQ1, AR1, AS1, BA5, BC3, BD1, BE1, CA1, CB1"; ""; ""; ""; ""; ""; ""
+"3"; "12"; ""; "MAHLE18041710"; "Vstřikovací lis 600-02 Engel"; "Linie IM V101"; "Polyprepylénový granulát.
+Skládá se z více sekcí:
+1) násypka s extrudérem, kde dochází k roztavení granulátu, který je dopravován potrubní pneu-dopravou z místnosti skladu granulátu.
+2) lis s matricemi, kde dojde k vlastní mu vylisování výrobku
+3) robot pro odběr hotových výlisků
+4) kontrolní pracoviště trvalé obsluhy - operátor
+Stroj je vybaven nouzovými Stop tlačítky
+Stroj má samostatný rozvaděč NN.
+Pod strojem je zbudována zádržná bezpečnostní jímka.
+Typ: ES 3550/600 HL
+v.č.: 42263
+r.v.: 2000"; "Prostor  II. (vnitřní prostor s trvalou regulací teploty)"; "s trvalou obsluhou"; "zářivkové"; "beton + pryskyřičná stěrka"; "sendvičové panely"; "sprinklery"; "vzduchotechnika"; "vzduchotechnika"; "44"; "AA6, AB5, AC1, AD1, AE1, AF3, AG1, AH1, AK1, AL1, AN1, AP1, AQ1, AR1, AS1, BA5, BC3, BD1, BE1, CA1, CB1"; ""; ""; ""; ""; ""; ""
+"3"; "12"; ""; "MAHLE18041711"; "Vstřikovací lis 600-01 Engel"; "Linie IM V101"; "Polyprepylénový granulát.
+Skládá se z více sekcí:
+1) násypka s extrudérem, kde dochází k roztavení granulátu, který je dopravován potrubní pneu-dopravou z místnosti skladu granulátu.
+2) lis s matricemi, kde dojde k vlastní mu vylisování výrobku
+3) robot pro odběr hotových výlisků
+4) kontrolní pracoviště trvalé obsluhy - operátor
+Stroj je vybaven nouzovými Stop tlačítky
+Stroj má samostatný rozvaděč NN.
+Pod strojem je zbudována zádržná bezpečnostní jímka.
+Typ: ES 3550/600 HL
+v.č.: 40042
+r.v.: 1999"; "Prostor  II. (vnitřní prostor s trvalou regulací teploty)"; "s trvalou obsluhou"; "zářivkové"; "beton + pryskyřičná stěrka"; "sendvičové panely"; "sprinklery"; "vzduchotechnika"; "vzduchotechnika"; "44"; "AA6, AB5, AC1, AD1, AE1, AF3, AG1, AH1, AK1, AL1, AN1, AP1, AQ1, AR1, AS1, BA5, BC3, BD1, BE1, CA1, CB1"; ""; ""; ""; ""; ""; ""
+"3"; "12"; ""; "MAHLE18041712"; "Vstřikovací lis 600-03 Engel"; "Linie IM V101"; "Polyprepylénový granulát.
+Skládá se z více sekcí:
+1) násypka s extrudérem, kde dochází k roztavení granulátu, který je dopravován potrubní pneu-dopravou z místnosti skladu granulátu.
+2) lis s matricemi, kde dojde k vlastní mu vylisování výrobku
+3) robot pro odběr hotových výlisků
+4) kontrolní pracoviště trvalé obsluhy - operátor
+Stroj je vybaven nouzovými Stop tlačítky
+Stroj má samostatný rozvaděč NN.
+Pod strojem je zbudována zádržná bezpečnostní jímka.
+Typ: ES 5550/600 HL
+v.č.: 46514
+r.v.: 2002"; "Prostor  II. (vnitřní prostor s trvalou regulací teploty)"; "s trvalou obsluhou"; "zářivkové"; "beton + pryskyřičná stěrka"; "sendvičové panely"; "sprinklery"; "vzduchotechnika"; "vzduchotechnika"; "44"; "AA6, AB5, AC1, AD1, AE1, AF3, AG1, AH1, AK1, AL1, AN1, AP1, AQ1, AR1, AS1, BA5, BC3, BD1, BE1, CA1, CB1"; ""; ""; ""; ""; ""; ""
+"3"; "12"; ""; "MAHLE18041713"; "Vstřikovací lis 1100-02 Engel"; "Linie IM V101"; "Polyprepylénový granulát.
+Skládá se z více sekcí:
+1) násypka s extrudérem, kde dochází k roztavení granulátu, který je dopravován potrubní pneu-dopravou z místnosti skladu granulátu.
+2) lis s matricemi, kde dojde k vlastní mu vylisování výrobku
+3) robot pro odběr hotových výlisků
+4) kontrolní pracoviště trvalé obsluhy - operátor
+Stroj je vybaven nouzovými Stop tlačítky
+Stroj má samostatný rozvaděč NN.
+Pod strojem je zbudována zádržná bezpečnostní jímka.
+Typ: ES 7050/1100
+v.č.: 178882
+r.v.: 2011"; "Prostor  II. (vnitřní prostor s trvalou regulací teploty)"; "s trvalou obsluhou"; "zářivkové"; "beton + pryskyřičná stěrka"; "sendvičové panely"; "sprinklery"; "vzduchotechnika"; "vzduchotechnika"; "44"; "AA6, AB5, AC1, AD1, AE1, AF3, AG1, AH1, AK1, AL1, AN1, AP1, AQ1, AR1, AS1, BA5, BC3, BD1, BE1, CA1, CB1"; ""; ""; ""; ""; ""; ""
+"3"; "12"; ""; "MAHLE18041714"; "Vstřikovací lis 1000-01 Engel"; "Linie IM V101"; "Polyprepylénový granulát.
+Skládá se z více sekcí:
+1) násypka s extrudérem, kde dochází k roztavení granulátu, který je dopravován potrubní pneu-dopravou z místnosti skladu granulátu.
+2) lis s matricemi, kde dojde k vlastní mu vylisování výrobku
+3) robot pro odběr hotových výlisků
+4) kontrolní pracoviště trvalé obsluhy - operátor
+Stroj je vybaven nouzovými Stop tlačítky
+Stroj má samostatný rozvaděč NN.
+Pod strojem je zbudována zádržná bezpečnostní jímka.
+Typ: ES 7050/1000
+v.č.: 158088
+r.v.: 2005"; "Prostor  II. (vnitřní prostor s trvalou regulací teploty)"; "s trvalou obsluhou"; "zářivkové"; "beton + pryskyřičná stěrka"; "sendvičové panely"; "sprinklery"; "vzduchotechnika"; "vzduchotechnika"; "64"; "AA6, AB5, AC1, AD1, AE1, AF3, AG1, AH1, AK1, AL1, AN1, AP1, AQ1, AR1, AS1, BA5, BC3, BD1, BE1, CA1, CB1"; ""; ""; ""; ""; ""; ""
+"3"; "12"; ""; "MAHLE18041715"; "Vstřikovací lis 1300-02 Engel"; "Linie IM V101"; "Polyprepylénový granulát.
+Skládá se z více sekcí:
+1) násypka s extrudérem, kde dochází k roztavení granulátu, který je dopravován potrubní pneu-dopravou z místnosti skladu granulátu.
+2) lis s matricemi, kde dojde k vlastní mu vylisování výrobku
+3) robot pro odběr hotových výlisků
+4) dvě kontrolní pracoviště trvalé obsluhy - operátor
+Stroj je vybaven nouzovými Stop tlačítky
+Stroj má samostatný rozvaděč NN.
+Pod strojem je zbudována zádržná bezpečnostní jímka.
+Typ: ES 7050/1300
+v.č.: 183478
+r.v.: 2012"; "Prostor  II. (vnitřní prostor s trvalou regulací teploty)"; "s trvalou obsluhou"; "zářivkové"; "beton + pryskyřičná stěrka"; "sendvičové panely"; "sprinklery"; "vzduchotechnika"; "vzduchotechnika"; "80"; "AA6, AB5, AC1, AD1, AE1, AF3, AG1, AH1, AK1, AL1, AN1, AP1, AQ1, AR1, AS1, BA5, BC3, BD1, BE1, CA1, CB1"; ""; ""; ""; ""; ""; ""
+"3"; "12"; ""; "MAHLE18041716"; "Vstřikovací lis 900-02 Engel"; "Linie IM V101"; "Polyprepylénový granulát.
+Skládá se z více sekcí:
+1) násypka s extrudérem, kde dochází k roztavení granulátu, který je dopravován potrubní pneu-dopravou z místnosti skladu granulátu.
+2) lis s matricemi, kde dojde k vlastní mu vylisování výrobku
+3) robot pro odběr hotových výlisků
+4) dvě kontrolní pracoviště trvalé obsluhy - operátor
+Stroj je vybaven nouzovými Stop tlačítky
+Stroj má samostatný rozvaděč NN.
+Pod strojem je zbudována zádržná bezpečnostní jímka.
+Typ: DUO 7050/900 WP
+v.č.: 049523
+r.v.: 2003"; "Prostor  II. (vnitřní prostor s trvalou regulací teploty)"; "s trvalou obsluhou"; "zářivkové"; "beton + pryskyřičná stěrka"; "sendvičové panely"; "sprinklery"; "vzduchotechnika"; "vzduchotechnika"; "80"; "AA6, AB5, AC1, AD1, AE1, AF3, AG1, AH1, AK1, AL1, AN1, AP1, AQ1, AR1, AS1, BA5, BC3, BD1, BE1, CA1, CB1"; ""; ""; ""; ""; ""; ""
+"3"; "12"; ""; "MAHLE18041717"; "Strojovna technologie chladící vody - vodárna"; "Linie IM V102"; "Strojovna je tvořena dvěma kovovými kontejnery (celokovové - mobilní) a přístavbou s betonovou podlahou. V prostoru strojovny jsou umístěny tři technologie pro úpravu a chlazení vody, čerpadla zásobníky chladící vody, potrubní systém plast + kov, kondenzátory."; "Prostor III. (vnitřní prostor s možností regulace teploty)"; "bez obsluhy, automatický režim"; "zářivkové"; "kombinovaná beton + ocelové pláty"; "sendvičové panely"; "hasicí přístroj"; "elektrické přímotopné panely"; "přirozené"; "75"; "AA5, AB5, AC1, AD1, AE1, AF1, AG1, AH1, AK1, AL1, AN1, AP1, AQ1, AR1, AS1, BA4, BC3, BD1, BE1, CA1, CB1"; ""; ""; ""; ""; ""; ""
+"3"; "12"; ""; "MAHLE18041718"; "Strojovna technologie chladící vody - chladící věže"; "Linie IM V102"; "Prostor chladící věží je venkovní, je zde umístěno 28 chladicích věží."; "Prostor III. (vnitřní prostor s možností regulace teploty)"; "bez obsluhy, automatický režim"; "zářivkové"; "ocelové pláty"; ""; ""; ""; "přirozené"; "24"; "AA7, AB7, AC1, AD2, AE1, AF2, AG1, AH1, AK1, AL1, AN2, AP1, AQ1, AR1, AS1, BA4, BC3, BD2, BE1, CA1, CB1"; ""; ""; ""; ""; ""; ""
+"3"; "2"; ""; "MAHLE03"; "WC ženy QS"; "A"; "Sociální zázemí pro laboratoř QS."; "Prostor  II. (vnitřní prostor s trvalou regulací teploty)"; "bez obsluhy"; "zářivkové"; "beton + dlažba"; "SDK - sádrokarton"; ""; ""; "vzduchotechnika"; "20"; "AA5, AB5, AC1, AD1, AE1, AF1, AG1, AH1, AK1, AL1, AN1, AP1, AQ1, AR1, AS1, BA1, BC1, BD1, BE1, CA1, CB1"; ""; ""; ""; ""; ""; ""
+"3"; "12"; ""; "MAHLE18041719"; "Pracoviště AGB"; "Linie IM"; "Pracoviště se skládá ze tří samostatných strojů:
+1)
+2)
+3)"; "Prostor  II. (vnitřní prostor s trvalou regulací teploty)"; "s trvalou obsluhou"; "zářivkové"; "beton + pryskyřičná stěrka"; "sendvičové panely"; "sprinklery"; ""; "přirozené"; "24"; "AA7, AB7, AC1, AD2, AE1, AF2, AG1, AH1, AK1, AL1, AN2, AP1, AQ1, AR1, AS1, BA4, BC3, BD2, BE1, CA1, CB1"; ""; ""; ""; ""; ""; ""

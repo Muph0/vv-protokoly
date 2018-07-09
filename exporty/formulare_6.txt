@@ -1,0 +1,1 @@
+"3"; "2"; "0"; "MAHLE99"; "Kantýna"; "A101"; "Linie A"; "Stravování"; "Prostor   I. (vnitřní prostor-plně klimatizovaná místa)"; "bez obsluhy"; "zářivkové"; "beton + lino"; "zděné + štuk"; "hasicí přístroj + hydrant"; "teplovodní"; "vzduchotechnika"; ""; "AA5, AB5, AC1, AD1, AE1, AF1, AG1, AH1, AK1, AL1, AN1, AP1, AQ1, AR1, AS1, BA1, BC1, BD1, BE1, CA1, CB1"; ""; ""; ""; ""
