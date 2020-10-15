@@ -130,7 +130,7 @@ input[type="number"]
   background: #dadada;
 }
 
-body > div
+body > div.form-container
 {
   width: 96%;
   margin: 2%;
@@ -174,7 +174,6 @@ div#tab_seznam_container
 #tab_seznam tbody tr.selected
 {
   background-color: #77c6ff;
-  border: 2px dashed red;
 }
 
 #elektro_rozbalen, #elektro_zabalen

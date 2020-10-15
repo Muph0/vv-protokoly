@@ -7,6 +7,7 @@
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/jstorage.min.js"></script>
     <script type="text/javascript" src="js/Scope.js"></script>
+    <script type="text/javascript" src="js/sweetalert2.all.min.js"></script>
     <script type="text/javascript" src="elements.js"></script>
     <script type="text/javascript" src="data.js"></script>
     <script type="text/javascript" src="rules.js"></script>
@@ -15,14 +16,20 @@
     <link rel="stylesheet" type="text/css" href="styly.css">
 </head>
 <body onload="init()">
-    <div>
+    <div class="form-container">
         <img alt="logo" src="ELKOS LOGO_4.jpg" onclick="$('body > div').toggleClass('container');">
         <table id="table_p">
-            <tr class="entry-row"> <!-- Členění -->
-                <td colspan="5" class="r-align">
+            <tr class="entry-row entry2-row"> <!-- Číslo budovy ; Členění -->
+                <td colspan="4" class="r-align">
+                    <b>ID budovy:</b>
+                </td>
+                <td colspan="1" class="">
+                    <input type="number" class="fillparent bluebold" value="#" name="id_budovy">
+                </td>
+                <td colspan="3" class="r-align">
                     <b>Členění:</b>
                 </td>
-                <td colspan="7">
+                <td colspan="4">
                     <input type="text" class="fillparent bluebold" value="#" name="cislo_protokolu">
                 </td>
             </tr>
@@ -238,7 +245,7 @@
                 <td class="c-align" colspan="2"><span class="bluebold">AB</span></td>
                 <td class="c-align" colspan="1">
                 <!--
-                ifprostor = "1,2,3,4" 
+                ifprostor = "1,2,3,4"
                 bezrizika = "5" ; lhuta = "5" ; prostor = "NORMÁLNÍ"
                 srizikem = "1,2,3,4" ; lhuta = "5" ; prostor = "NEBEZPEČNÉ"
                 srizikem = "6,7" ; lhuta = "4" ; prostor = "ZVLÁŠŤ NEBEZPEČNÉ"
@@ -314,7 +321,7 @@
                 <td colspan="2"><b>Nadmořská výška:</b></td>
                 <td class="c-align" colspan="2"><span class="bluebold">AC</span></td>
                 <td class="c-align" colspan="4">
-                <!-- 
+                <!--
                 bezrizika = "1,2" ; lhuta = "5" ; prostor = "NORMÁLNÍ"
                 -->
                     <p>
@@ -446,7 +453,7 @@
                 <td class="c-align" colspan="2"><span class="bluebold">AF</span></td>
                 <td class="c-align" colspan="2">
                 <!--
-                bezrizika = "1" ; lhuta = "5" ; prostor = "NORMÁLNÍ" 
+                bezrizika = "1" ; lhuta = "5" ; prostor = "NORMÁLNÍ"
                 srizikem = "2,3" ; lhuta = "3"> ; prostor = "NEBEZPEČNÉ">
                 srizikem = "4" ; lhuta = "1" ; prostor = "ZVLÁŠŤ NEBEZPEČNÉ"
                 -->
@@ -510,7 +517,7 @@
                 <td colspan="2"><b>Vibrace:</b></td>
                 <td class="c-align" colspan="2"><span class="bluebold">AH</span></td>
                 <td class="c-align" colspan="3">
-                <!-- 
+                <!--
                 bezrizika = "1" ; lhuta = "5" ; prostor = "NORMÁLNÍ"
                 srizikem = "2" ; lhuta = "3" ; prostor = "NEBEZPEČNÉ"
                 srizikem = "3" ; lhuta = "2" ; prostor = "ZVLÁŠŤ NEBEZPEČNÉ"
@@ -549,7 +556,7 @@
                 <td colspan="2"><b>Rostlinstvo:</b></td>
                 <td class="c-align" colspan="2"><span class="bluebold">AK</span></td>
                 <td class="c-align" colspan="4">
-                <!-- 
+                <!--
                 bezrizika = "1" ; lhuta = "5" ; prostor = "NORMÁLNÍ"
                 srizikem = "2" ; lhuta = "3" ; prostor = "NEBEZPEČNÉ"
                 -->
@@ -861,7 +868,7 @@
                 <td class="c-align" colspan="8">
                 </td>
             </tr>
-            <tr class="entry-row radio-row" bez_rizika="[]"> <!-- AN Sluneční záření -->
+            <tr class="entry-row radio-row" bez_rizika="[1,2]"> <!-- AN Sluneční záření -->
                 <td colspan="2"><b>Sluneční záření:</b></td>
                 <td class="c-align" colspan="2"><span class="bluebold">AN</span></td>
                 <td class="c-align" colspan="3">
@@ -978,7 +985,7 @@
                     </p>
                 </td>
             </tr>
-            <tr class="entry-row radio-row" bez_rizika="A1_prostor < 5 ? [5] : []"> <!-- AS  Vítr -->
+            <tr class="entry-row radio-row" bez_rizika="A1_prostor < 5 ? [1,2,3] : []"> <!-- AS  Vítr -->
                 <td colspan="2"><b> Vítr:</b></td>
                 <td class="c-align" colspan="2"><span class="bluebold">AS</span></td>
                 <td class="c-align" colspan="3">
@@ -1024,14 +1031,14 @@
                 </td>
                 <td class="c-align" colspan="1">
                     <p>
-                        <input type="radio" name="BA" lhuta = "3" ; prostor = 'NEBEZPEČNÉ'>
+                        <input type="radio" name="BA" lhuta = "3" prostor = 'NEBEZPEČNÉ'>
                         &nbsp;<b>2</b><br>
                         děti
                     </p>
                 </td>
                 <td class="c-align" colspan="2">
                     <p>
-                        <input type="radio" name="BA" lhuta = "3" ; prostor = 'ZVLÁŠŤ NEBEZPEČNÉ'>
+                        <input type="radio" name="BA" lhuta = "3" prostor = 'ZVLÁŠŤ NEBEZPEČNÉ'>
                         &nbsp;<b>3</b><br>
                         osoby se zdravotním postižením
                     </p>
@@ -1049,9 +1056,9 @@
                     </p>
                 </td>
             </tr>
-            <tr class="entry-row radio-row" bez_rizika="[1]"> <!-- BB Elektrický odpor lidského těla -->
+            <tr class="entry-row radio-row"> <!-- BB Elektrický odpor lidského těla -->
                 <td colspan="2"><b>Elektrický odpor lidského těla:</b></td>
-                <td class="c-align" colspan="2">
+                <td class="c-align" colspan="2" bez_rizika="[1]">
                     <input type="checkbox" name="BB" value="1">
                     &nbsp;
                     <span class="bluebold">BB</span>
@@ -1080,14 +1087,14 @@
                 </td>
                 <td class="c-align" colspan="2">
                     <p>
-                        <input type="radio" name="BC" lhuta = "3" ; prostor = 'NEBEZPEČNÉ'>
+                        <input type="radio" name="BC" lhuta = "3" prostor = 'NEBEZPEČNÉ'>
                         &nbsp;<b>3</b><br>
                         častý
                     </p>
                 </td>
                 <td class="c-align" colspan="2">
                     <p>
-                        <input type="radio" name="BC" lhuta = "3" ; prostor = 'NEBEZPEČNÉ'>
+                        <input type="radio" name="BC" lhuta = "3" prostor = 'NEBEZPEČNÉ'>
                         &nbsp;<b>4</b><br>
                         trvalý
                     </p>
@@ -1114,14 +1121,14 @@
                 </td>
                 <td class="c-align" colspan="2">
                     <p>
-                        <input type="radio" name="BD" lhuta = "3" ; prostor = 'NEBEZPEČNÉ'>
+                        <input type="radio" name="BD" lhuta = "3" prostor = 'NEBEZPEČNÉ'>
                         &nbsp;<b>3</b><br>
                         vysoký počet lidí/snadný únik
                     </p>
                 </td>
                 <td class="c-align" colspan="2">
                     <p>
-                        <input type="radio" name="BD" lhuta = "3" ; prostor = 'NEBEZPEČNÉ'>
+                        <input type="radio" name="BD" lhuta = "3" prostor = 'NEBEZPEČNÉ'>
                         &nbsp;<b>4</b><br>
                         vysoký počet lidí/obtížný únik
                     </p>
@@ -1142,49 +1149,49 @@
                 </td>
                 <td class="c-align" colspan="1">
                     <p>
-                        <input type="radio" name="BE" lhuta = "2" ; prostor = 'NORMÁLNÍ'>
+                        <input type="radio" name="BE" lhuta = "2" prostor = 'NORMÁLNÍ'>
                         &nbsp;<b>2N1</b><br>
                         požár hmot
                     </p>
                 </td>
                 <td class="c-align" colspan="1">
                     <p>
-                        <input type="radio" name="BE" lhuta = "2" ; prostor = 'NEBEZPEČNÉ'>
+                        <input type="radio" name="BE" lhuta = "2" prostor = 'NEBEZPEČNÉ'>
                         &nbsp;<b>2N2</b><br>
                         požár prachů
                     </p>
                 </td>
                 <td class="c-align" colspan="1">
                     <p>
-                        <input type="radio" name="BE" lhuta = "2" ; prostor = 'ZVLÁŠŤ NEBEZPEČNÉ'>
+                        <input type="radio" name="BE" lhuta = "2" prostor = 'ZVLÁŠŤ NEBEZPEČNÉ'>
                         &nbsp;<b>2N3</b><br>
                         požár kapalin
                     </p>
                 </td>
                 <td class="c-align" colspan="1">
                     <p>
-                        <input type="radio" name="BE" lhuta = "3" ; prostor = 'NEBEZPEČNÉ'>
+                        <input type="radio" name="BE" lhuta = "3" prostor = 'NEBEZPEČNÉ'>
                         &nbsp;<b>3N1</b><br>
                         výbuch prachů
                     </p>
                 </td>
                 <td class="c-align" colspan="1">
                     <p>
-                        <input type="radio" name="BE" lhuta = "3" ; prostor = 'ZVLÁŠŤ NEBEZPEČNÉ'>
+                        <input type="radio" name="BE" lhuta = "3" prostor = 'ZVLÁŠŤ NEBEZPEČNÉ'>
                         &nbsp;<b>3N2</b><br>
                         výbuch plynů a par
                     </p>
                 </td>
                 <td class="c-align" colspan="1">
                     <p>
-                        <input type="radio" name="BE" lhuta = "1" ; prostor = 'ZVLÁŠŤ NEBEZPEČNÉ'>
+                        <input type="radio" name="BE" lhuta = "1" prostor = 'ZVLÁŠŤ NEBEZPEČNÉ'>
                         &nbsp;<b>3N3</b><br>
                         výbuch výbušnin
                     </p>
                 </td>
                 <td class="c-align" colspan="1">
                     <p>
-                        <input type="radio" name="BE" lhuta = "3" ; prostor = 'NEBEZPEČNÉ'>
+                        <input type="radio" name="BE" lhuta = "3" prostor = 'NEBEZPEČNÉ'>
                         &nbsp;<b>4</b><br>
                         nebezpečí kontaminace
                     </p>
@@ -1291,7 +1298,9 @@
         <b>Název souboru</b>
         <input type="text" placeholder="formulare.txt" class="form-control" id="form_filename" /><br>
         <!--input type="checkbox" id="erase_on_export" checked="false"> Odstranit záznamy při exportu. <br><br-->
-        <button id="export_forms" class="btn btn-default">Exportovat záznamy</button><br>
+        <button id="export_forms" class="btn btn-default">Exportovat záznamy</button>
+        <button id="upload_forms" class="btn btn-info">Upload na debian</button>
+        <br>
 
         <br>
         <h4>Import</h4>

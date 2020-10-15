@@ -99,7 +99,53 @@ function elements_init () {
         clone_form(meta.selected);
     });
     $('button#export_forms').click(function() {
-        download_forms_sql();
+
+        var sql_query = create_forms_sql();
+
+        var filename = $('#form_filename')[0].value;
+        if (!filename)
+            filename = $('#form_filename').attr('placeholder');
+
+        download(filename, sql_query);
+    });
+    $('button#upload_forms').click(function() {
+        var data = create_forms_data();
+
+        var timerInterval;
+        swal({
+            title: 'Nahrávání...',
+            onOpen: () => {
+                swal.showLoading()
+                timerInterval = setInterval(() => {
+                    swal.getTitle().textContent = 'Nahrávání.' + '.'.repeat(Math.floor((new Date().getTime() / 250) % 3));
+                    console.log(timerInterval);
+                }, 100)
+
+                $.cors({
+                    method: 'POST',
+                    url: 'http://vv.debian.int/import.php',
+
+                    data: data,
+
+                    success: function(result) {
+                        console.log(result);
+                        swal('Hotovo', '', 'success');
+                    },
+                    error: function(result) {
+                        console.error(result);
+                        swal('Připojení selhalo', '', 'error');
+                    },
+                    finished: function() {
+                        clearInterval(timerInterval);
+                    },
+
+                })
+
+            },
+            onClose: () => {
+                clearInterval(timerInterval);
+            }
+        }).then(() => clearInterval(timerInterval));
     });
     $('button#delete_form').click(function() {
         var meta = load_forms_meta();

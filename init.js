@@ -124,3 +124,35 @@ function CSVToArray( strData, strDelimiter )
     // Return the parsed data.
     return( arrData );
 }
+
+$.cors = function(data) {
+
+    var xhr = new XMLHttpRequest();
+    if ("withCredentials" in xhr) {
+        // XHR for Chrome/Firefox/Opera/Safari.
+        xhr.open(data.method, data.url, true);
+    } else if (typeof XDomainRequest != "undefined") {
+        // XDomainRequest for IE.
+        xhr = new XDomainRequest();
+        xhr.open(data.method, data.url);
+    } else {
+        // CORS not supported.
+        xhr = null;
+    }
+
+    if (typeof data.finished !== 'function') data.finished = () => {};
+
+    if (typeof data.success === 'function')
+        xhr.onload = (evt) => {
+            data.success(xhr.responseText); data.finished()
+        };
+    if (typeof data.error === 'function')
+        xhr.onerror = (evt) => {
+            data.error(xhr.responseText); data.finished()
+        };
+
+    if (data.data)
+        xhr.send(typeof data.data === 'string' ? data.data : JSON.stringify(data.data));
+
+    return xhr;
+}

@@ -76,7 +76,7 @@ function apply_form(form)
             else
                 elem.value = value;
         }
-        else elem.value = '';            
+        else elem.value = '';
     });
 
     $('textarea#vyuziti_area')[0].value = form.A2_vyuziti;
@@ -88,7 +88,7 @@ function apply_form(form)
         if (value !== null && typeof value !== 'undefined')
         {
             var $option = $(elem).find('option[value="' +value+ '"]');
-            
+
             $option[0].selected = true;
         }
     });
@@ -126,7 +126,7 @@ function apply_form(form)
 
     $('#lhuta')[0].innerHTML = form.vlivy.lhuta;
     $('#prostory')[0].innerHTML = form.vlivy.prostor;
-    
+
 }
 
 function escape_CSV(str)
@@ -214,7 +214,7 @@ function save_form(id, form)
     $.jStorage.set("form_" + id, form);
 }
 
-function delete_form(form_id) 
+function delete_form(form_id)
 {
     var meta = load_forms_meta();
     meta.data[form_id] = false;
@@ -223,7 +223,7 @@ function delete_form(form_id)
     select_meta_row(form_id*1 - 1);
 }
 
-function tonumber(value)
+function trynumber(value)
 {
     if (Number.isFinite(value * 1))
         return value * 1;
@@ -263,93 +263,110 @@ function gen_vlivy(form)
     {
         if (/[A-C][A-Z]+.*/.test(key))
         {
+            var $radio = null;
+            var $row, vliv;
+
             switch (typeof form[key])
             {
                 case 'boolean':
-                if (form[key]) veta.push(key);
+
+                    if (!form[key]) continue;
+
+                    vliv = key;
+                    $('input[type="checkbox"][name="'+key+'"]').each(function (i, elem)
+                    {
+                        $radio = $(elem);
+                    });
+                    $row = $radio.parents('td').first();
+
                 break;
                 case 'string':
                 case 'number':
 
-                var vliv = key + form[key];
-                var $radio = null;
-                $('input[type="radio"][name="'+key+'"]').each(function (i, elem)
+                    vliv = key + form[key];
+                    $('input[type="radio"][name="'+key+'"]').each(function (i, elem)
+                    {
+                        if ($(elem).siblings('b').first().html() === form[key])
+                            $radio = $(elem);
+                    });
+                    $row = $radio.parents('tr').first();
+
+
+                break;
+
+                case 'undefined':
+                case 'null':
+                continue;
+                break;
+            }
+
+            var hodnota = trynumber(form[key]);
+
+            ///
+            // RIZIKO
+            //
+            var attr_bez_rizika = $row.attr('bez_rizika');
+            var hodnoty_bez_rizika = null;
+
+            // <tr ... bez_rizika>
+            if (attr_bez_rizika === '')
+            {
+                hodnoty_bez_rizika = true;
+            }
+            // <tr ... >
+            else if (typeof attr_bez_rizika === 'undefined' || attr_bez_rizika === false)
+            {
+                hodnoty_bez_rizika = [];
+            }
+            // <tr ... bez_rizika="[...]">
+            else
+            {
+                hodnoty_bez_rizika = scope.eval(attr_bez_rizika);
+            }
+
+            if (hodnoty_bez_rizika === true || hodnoty_bez_rizika.indexOf(hodnota) > -1)
+                vlivy.bez_rizika.push(vliv);
+            else
+                vlivy.s_rizikem.push(vliv);
+
+            ///
+            // LHŮTA
+            //
+            var attr_lhuta = $radio.attr('lhuta');
+            if (attr_lhuta)
+            {
+                var lhuta = scope.eval(attr_lhuta);
+                if (typeof lhuta != 'number' || typeof lhuta == 'undefined')
                 {
-                    if ($(elem).siblings('b').first().html() === form[key])
-                        $radio = $(elem);
-                });
-                var $row = $radio.parents('tr');
-                var hodnota = tonumber(form[key]);
-
-                    ///
-                    // RIZIKO
-                    //
-                    var attr_bez_rizika = $row.attr('bez_rizika');
-                    var hodnoty_bez_rizika = null;
-
-                    // <tr ... bez_rizika>
-                    if (attr_bez_rizika === '')
-                    {
-                        hodnoty_bez_rizika = true;
-                    }
-                    // <tr ... >
-                    else if (typeof attr_bez_rizika === 'undefined' || attr_bez_rizika === false)
-                    {
-                        hodnoty_bez_rizika = [];
-                    }
-                    // <tr ... bez_rizika="[...]">
-                    else
-                    {                        
-                        hodnoty_bez_rizika = scope.eval(attr_bez_rizika);
-                    }
-
-                    if (hodnoty_bez_rizika === true || hodnoty_bez_rizika.indexOf(hodnota) > -1)                    
-                        vlivy.bez_rizika.push(vliv);
-                    else
-                        vlivy.s_rizikem.push(vliv);                  
-
-                    ///
-                    // LHŮTA
-                    //
-                    var attr_lhuta = $radio.attr('lhuta');
-                    if (attr_lhuta)
-                    {
-                        var lhuta = scope.eval(attr_lhuta);
-                        if (typeof lhuta != 'number' || typeof lhuta == 'undefined')
-                        {
-                            console.error('Neplatná lhůta u vlivu ' + key + ', hodnota ' + hodnota);
-                            //debugger;
-                        }
-
-                        if (lhuta < vlivy.lhuta)
-                            vlivy.lhuta = lhuta;
-                    }
-
-                    ///
-                    // PROSTOR
-                    //
-                    var attr_prostor = $radio.attr('prostor');
-                    
-                    if (attr_prostor)
-                    {   
-                        var prostor;        
-                        if (PROSTOR.indexOf(attr_prostor) === -1)             
-                            prostor = scope.eval(attr_prostor);
-                        else
-                            prostor = attr_prostor;
-
-                        var prostor_index = PROSTOR.indexOf(prostor);
-                        if (prostor_index === -1) console.log('Neplatný attribut "prostor" u vlivu ' + key + ', hodnota ' + hodnota);
-
-                        if (prostor_index > PROSTOR.indexOf(vlivy.prostor))
-                            vlivy.prostor = prostor;
-                    }
-
-
-                    break;
+                    console.error('Neplatná lhůta u vlivu ' + key + ', hodnota ' + hodnota);
+                    //debugger;
                 }
+
+                if (lhuta < vlivy.lhuta)
+                    vlivy.lhuta = lhuta;
+            }
+
+            ///
+            // PROSTOR
+            //
+            var attr_prostor = $radio.attr('prostor');
+
+            if (attr_prostor)
+            {
+                var prostor;
+                if (PROSTOR.indexOf(attr_prostor) === -1)
+                    prostor = scope.eval(attr_prostor);
+                else
+                    prostor = attr_prostor;
+
+                var prostor_index = PROSTOR.indexOf(prostor);
+                if (prostor_index === -1) console.log('Neplatný attribut "prostor" u vlivu ' + key + ', hodnota ' + hodnota);
+
+                if (prostor_index > PROSTOR.indexOf(vlivy.prostor))
+                    vlivy.prostor = prostor;
             }
         }
+    }
 
 
 
@@ -387,13 +404,13 @@ function export_form(form)
     }
 
     return [
-        3, // ID_budova
-        form.A1_cast,    
+        trynumber(form.A0_id_budovy), // ID_budova
+        trynumber(form.A1_cast),
         0, // ID_prostor
         form.A0_cislo_protokolu,
         form.A0_mistnost,
         form.A0_umisteni,
-        form.A0_linie,        
+        form.A0_linie,
         form.A2_vyuziti,
         get_option_text_by_value('prostor', form.A1_prostor),
         get_option_text_by_value('obsluha', form.A1_obsluha),
@@ -458,14 +475,10 @@ function escape_sql_value(value)
     throw new {message: "SQL unknown value:", value: value};
 }
 
-function download_forms_sql()
+function create_forms_data()
 {
     var meta = load_forms_meta();
-    var result = "INSERT INTO Protokol\r\n\r\n" +
-    "(ID_budova,  ID_cast,  ID_prostor,  Cleneni,  Popis,     Oznaceni_umisteni,  Vyrobni_linie,      Vyuziti_prostoru_plochy,\r\n" +
-    " Prostor,    Obsluha,  Osvetleni,   Podlaha,  Steny,     Pozarni_ochrana,    Vytapeni_chlazeni,  Vetrani,Vymera,\r\n" +
-    " Vlivy_bez_rizika,     Vlivy_s_rizikem,       Prostory,  Revizni_lhuta)" +
-    "\r\n\r\n    VALUES\r\n\r\n";
+    var result = [];
 
     for (form_id in meta.data)
     {
@@ -473,18 +486,31 @@ function download_forms_sql()
         if (display)
         {
             var form = load_form(form_id);
-            var values = export_form(form).map(escape_sql_value);
+            var values = export_form(form);
 
-            var line = '(' + values.join(', ') + '),\r\n'
-            result += line;
+            result.push(values);
         }
     }
 
-    var filename = $('#form_filename')[0].value;
-    if (!filename)
-        filename = $('#form_filename').attr('placeholder');
+    return result;
+}
 
-    download(filename, result);
+function create_forms_sql()
+{
+    var data = create_forms_data();
+    var result = "INSERT INTO tb_protokol\r\n\r\n" +
+    "(ID_budova,  ID_cast,  ID_prostor,  Cleneni,  Popis,     Oznaceni_umisteni,  Vyrobni_linie,      Vyuziti_prostoru_plochy,\r\n" +
+    " Prostor,    Obsluha,  Osvetleni,   Podlaha,  Steny,     Pozarni_ochrana,    Vytapeni_chlazeni,  Vetrani,Vymera,\r\n" +
+    " Vlivy_bez_rizika,     Vlivy_s_rizikem,       Prostory,  Revizni_lhuta)" +
+    "\r\n\r\n    VALUES\r\n\r\n";
+
+    for (form_data of data)
+    {
+        var line = '(' + form_data.map(escape_sql_value).join(', ') + '),\r\n'
+        result += line;
+    }
+
+    return result;
 }
 
 
@@ -512,12 +538,12 @@ function import_form(data)
     for (var i = 0; i < data.length; i++)
     {
         data[i] = data[i] || '';
-    }    
+    }
     //console.log(data);
 
     var form = {};
 
-    //3, // ID_budova
+    form.A0_id_budovy = data[0];//3, // ID_budova
     form.A1_cast = data[1];
     //0, // ID_prostor
     form.A0_cislo_protokolu = data[3];
@@ -534,7 +560,7 @@ function import_form(data)
     form.A1_vytapeni = get_option_value_by_text('vytapeni',data[14]);
     form.A1_vetrani = get_option_value_by_text('vetrani',data[15]);
     form.A0_vymera = data[16];
-    
+
     //vlivy.bez_rizika,
     //vlivy.s_rizikem,
     var vlivy = data[17] + ',' + data[18];
@@ -574,7 +600,7 @@ function import_form(data)
 
     form.vlivy = gen_vlivy(form);
 
-    //console.log(form);/*    
+    //console.log(form);/*
 
     var meta = load_forms_meta();
     var id = meta.data.length;
