@@ -123,7 +123,7 @@ function elements_init () {
 
                 $.cors({
                     method: 'POST',
-                    url: 'http://vv.debian.int/import.php',
+                    url: 'http://192.168.7.20/vv-protokoly/import.php',
 
                     data: data,
 
